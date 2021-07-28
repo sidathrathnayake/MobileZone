@@ -1,0 +1,161 @@
+nav a{
+    text-decoration: none;
+    color: #fff;
+}
+
+nav{
+    display: flex;
+    padding: 0 5%;
+    justify-content:space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+    position:absolute;
+    z-index:1000;
+}
+
+.nav-home{
+    font-size: 3rem;
+    font-weight: 300;
+    transform: translateX(-100rem);
+    animation: slideIn .5s forwards;
+    color: #fff;
+}
+
+.nav-home span{
+    color: crimson;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    padding: 10px 30px;
+    list-style: none;
+    transform: translateX(100rem);
+    animation: slideIn .5s forwards;
+}
+
+
+nav ul li:nth-child(1){
+    animation-delay: 0s;
+}
+nav ul li:nth-child(2){
+    animation-delay: .5s;
+}
+nav ul li:nth-child(3){
+    animation-delay: 1s;
+}
+nav ul li:nth-child(4){
+    animation-delay: 1.5s;
+}
+
+
+nav ul li a{
+    padding: 1rem 0;
+    margin: 0 0;
+    position: relative;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+nav ul li a:last-child{
+    margin-right: 0;
+
+}
+
+nav ul li a::before,
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: crimson;
+    left: 0;
+    transform: scaleX(0);
+    transition:all .5s;
+
+}
+
+nav ul li a::before{
+    top: 0;
+    transform-origin: left;
+
+}
+
+nav ul li a::after{
+    bottom: 0;
+    transform-origin: right;
+
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+    
+    transform: scaleX(1);
+
+}
+
+@keyframes slideIn {
+    from{
+
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.nav-dropdown{
+    display: none;
+}
+
+nav ul li:hover .nav-dropdown{
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000;
+}
+
+nav ul li:hover .nav-dropdown ul{
+    display: block;
+    margin: 10px;
+}
+
+nav ul li:hover .nav-dropdown ul li{
+    width: 150px;
+    padding: 10px;
+}
+
+.fas{
+    float: right;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+
+.nav-dropdown-drop{
+    display: none;
+}
+
+.nav-dropdown ul li:hover .nav-dropdown-drop{
+    display: block;
+    position: absolute;
+    top: 0;
+    left:150px;
+    background: #000;
+}
+
+.nav-dropdown ul li:hover .nav-dropdown-drop ul{
+    display: block;
+    margin: 10px;
+}
+
+.nav-dropdown ul li:hover .nav-dropdown-drop ul li{
+    width: 150px;
+    padding: 10px;
+}

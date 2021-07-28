@@ -18,7 +18,7 @@ import User_Register from './components/Register/User_Regiseter';
 import Admin_Reset_Password from './components/Reset_Password/Admin_Reset_Password';
 import Normal_Cover from './components/CoverImage/Normal_Cover';
 import Normal_Home from './components/Home/Normal_Home';
-
+import Admin_Home from './components/Home/Admin_Home';
 
 const App = () => {
 
@@ -31,6 +31,11 @@ const App = () => {
             <Route exact path="/" component={Normal_Home}/>
             <Route exact path="/userlogin" component={User_Login}/>
             <Route exact path="/userregister" component={User_Register}/>
+            <Route exact path="/adminhome" component={Admin_Home}/>
+
+
+
+            <Route exact path="/userdetails" component={Read_User}/>
         </Switch>   
       </div>
     </Router>

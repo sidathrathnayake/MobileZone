@@ -1,0 +1,183 @@
+.cover-slides img{
+    max-width: 100%;
+    height: auto;
+}
+.cover-slides .cover-image{
+    display: block;
+    width: auto;
+    height: 500px;
+    position: relative;
+    z-index: 20;
+    margin-top: 75px;
+    margin-left: 150px;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-name: slideInRight;
+
+
+}
+a{
+    text-decoration: none;
+}
+.cover-slides h2{
+    color: white;
+    font-size: 160px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 33px;
+    line-height: 1;
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    z-index: 10;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-name: fadeInLeft;
+}
+.cover-slides h2 span a{
+    color:yellow;
+    display: block;
+    text-align: right;
+    font-size: 22px;
+    letter-spacing: 20px;
+    text-transform:capitalize;
+    padding-right: 20px;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover{
+    background-color:transparent;
+    color: #fff;
+}
+
+.cover-slides{
+    padding-top: 190px;
+    position: relative;
+}
+
+.cover-slides .cover-details{
+    width: 350px;
+    position: absolute;
+    top: 220px;
+    right: 100px;
+    z-index: 30;
+}
+
+
+.cover-slides .cover-details p{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-name: slideInRight;
+}
+
+.cover-slides .cover-details h4{
+    margin-top: 20%;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    animation-duration: 1.2s;
+    text-align: center;
+    animation-fill-mode: both;
+    animation-name: fadeInLeft;
+}
+
+
+.cover-slides .cover-details .btn{
+    background-color:yellow;
+    margin-left: 28%;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+}
+
+.cover-slides .cover-details .btn:hover{
+    background-color: #5995fd;
+}
+
+.cover-slides .cover-details .btn a{
+    color:black;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+}
+
+.cover-slides .cover-details .btn a:hover{
+    color:white;
+}
+
+.fadeInLeft{
+    animation-name: fadeInLeft;
+}
+
+.fadeInUp{
+    animation-name: fadeInUp;
+}
+
+.slideInRight{
+    animation-name: slideInRight;
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInRight{
+    from{
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInLeft{
+    from{
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
