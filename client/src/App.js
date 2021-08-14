@@ -8,6 +8,7 @@ import './css/nav.css';
 import './css/style.css';
 import './css/insert.css';
 import './css/cover_slide.css';
+import './css/payment.css'
 
 import Read_User from './components/Read/Read_User';
 import Footer from './components/Footer/Footer';
@@ -19,6 +20,8 @@ import Admin_Reset_Password from './components/Reset_Password/Admin_Reset_Passwo
 import Normal_Cover from './components/CoverImage/Normal_Cover';
 import Normal_Home from './components/Home/Normal_Home';
 import Admin_Home from './components/Home/Admin_Home';
+import Shipping_Address from './components/order_and_payment/shippingAddress';
+import Payment_Type from './components/order_and_payment/payment_type';
 
 const App = () => {
 
@@ -36,6 +39,8 @@ const App = () => {
 
 
             <Route exact path="/userdetails" component={Read_User}/>
+            <Route path="/shipping" component={Shipping_Address}/>
+            <Route exact path="/payType" component={Payment_Type}/>
         </Switch>   
       </div>
     </Router>
