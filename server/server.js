@@ -34,3 +34,11 @@ process.on("unhandledRejection", (err, promise) => {
     console.log(`Logged Error: ${err}`);
     server.close(() => process.exit(1));
 });
+
+//Viraj
+const categoryRouter = require("./routes/category_route");
+//const productRouter = require("./routes/product_route");
+
+//Viraj
+app.use("/category",categoryRouter);
+//app.use("/api/products",productRouter);

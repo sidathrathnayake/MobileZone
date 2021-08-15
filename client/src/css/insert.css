@@ -68,7 +68,7 @@ input[type="file"]{
     padding-left: 15px;
 }
 
-.btn{
+/* .btn{
     width: 150px;
     height: 49px;
     border: none;
@@ -82,11 +82,11 @@ input[type="file"]{
     margin: 10px 0;
     transition: .5s;
 
-}
+} */
 
-.btn:hover{
+/* .btn:hover{
     background: #4d84e2;
-}
+} */
 
 form.insert-form1{
     z-index: 2;
@@ -141,7 +141,7 @@ form.insert-form2{
     font-size: 1.5rem;
 }
 
-.btn.transparent{
+/* .btn.transparent{
     margin: 0;
     background: none;
     border: 2px solid #fff;
@@ -149,7 +149,7 @@ form.insert-form2{
     height: 41px;
     font-weight: 600;
     font-size: 0.8rem;
-}
+} */
 
 .right-panel .panel-content, .right-panel .insert-image{
     transform: translateX(800px);

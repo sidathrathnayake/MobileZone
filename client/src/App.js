@@ -19,6 +19,12 @@ import Admin_Reset_Password from './components/Reset_Password/Admin_Reset_Passwo
 import Normal_Cover from './components/CoverImage/Normal_Cover';
 import Normal_Home from './components/Home/Normal_Home';
 import Admin_Home from './components/Home/Admin_Home';
+/**Viraj Imports */
+import Category_Insert from './components/Category/Category_Insert';
+import Category_ViewAdmin from './components/Category/Category_ViewAdmin';
+import Category_Update from './components/Category/Category_Update';
+import Category_Delete from './components/Category/Category_Delete';
+import Category_ViewCustomer from './components/Category/Category_ViewCustomer';
 
 const App = () => {
 
@@ -32,10 +38,14 @@ const App = () => {
             <Route exact path="/userlogin" component={User_Login}/>
             <Route exact path="/userregister" component={User_Register}/>
             <Route exact path="/adminhome" component={Admin_Home}/>
-
-
-
             <Route exact path="/userdetails" component={Read_User}/>
+
+            {/* Viraj Paths */}
+            <Route exact path="/create-category" component={Category_Insert}/>
+            <Route exact path="/view-category-admin" component={Category_ViewAdmin}/>
+            <Route exact path="/update-before-category/:categoryName" component={Category_Update}/>
+            <Route exact path="/delete-before-category/:categoryName" component={Category_Delete}/>
+            <Route exact path="/view-category-customer" component={Category_ViewCustomer}/>
         </Switch>   
       </div>
     </Router>
