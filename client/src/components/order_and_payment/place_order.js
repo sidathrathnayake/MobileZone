@@ -1,43 +1,31 @@
 import React, { Component} from 'react'
 import CheckoutSteps from '../order_and_payment/checkout_steps';
+import UserNavigation from '../Navigation/User_Navigation';
+import Footer from '../Footer/Footer';
 
-const initialState = {
-  payType: ''
-}
-class paymentType extends Component {
-  constructor(props) {
-    super(props);
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.state = initialState;
-  }
+
+class placeOrder extends Component {
   
-  onChange(e) {
-   this.setState({ [e.target.name]: e.target.value })
-  }
-  
-  onSubmit(e) {
-    e.preventDefault();
-    let paymentMethod = this.state.payType;
-    console.log('Payment Method', paymentMethod);
-    window.location=''
+  confirmOrder() {
+    window.location='/orderSum'
   }
   render (){
     return(
       <div>
-        <br/>
+        <UserNavigation/>
+        <br/><br/><br/><br/>
         <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
         <div className="row top">
-          <div className="col-2">
+          <div className="col-8">
             <ul>
               <li>
                 <div className="card card-body">
                   <h2>Shipping</h2>
                   <p>
-                    <strong>Name:</strong> get fullName <br />
-                    <strong>Address: </strong> get address,
-                     get postalCode
-                    ,get country
+                    <strong>Name:</strong> {localStorage.getItem("Shipping_name")} <br />
+                    <strong>Address: </strong> {localStorage.getItem("Shipping_address")},
+                    {localStorage.getItem("Shipping_country")}
+                    ,{localStorage.getItem("Shipping_postalCode")}
                   </p>
                 </div>
               </li>
@@ -45,7 +33,7 @@ class paymentType extends Component {
                 <div className="card card-body">
                   <h2>Payment</h2>
                   <p>
-                    <strong>Method:</strong> get paymentMethod
+                    <strong>Method:</strong>{localStorage.getItem("payment_type")}
                   </p>
                 </div>
               </li>
@@ -73,7 +61,7 @@ class paymentType extends Component {
               </li>
             </ul>
           </div>
-          <div className="col-1">
+          <div className="col-3">
             <div className="card card-body">
               <ul>
                 <li>
@@ -81,20 +69,20 @@ class paymentType extends Component {
                 </li>
                 <li>
                   <div className="row">
-                    <div>Items</div>
-                    <div>$get price</div>
+                    <div>Items Total</div>
+                    <div>${localStorage.getItem("order_Total")}</div>
                   </div>
                 </li>
                 <li>
                   <div className="row">
                     <div>Shipping</div>
-                    <div>$calculate shipping charge</div>
+                    <div>${localStorage.getItem("Shipping_charge")}</div>
                   </div>
                 </li>
                 <li>
                   <div className="row">
                     <div>Tax</div>
-                    <div>$calculate tax</div>
+                    <div>${localStorage.getItem("tax_charge")}</div>
                   </div>
                 </li>
                 <li>
@@ -103,14 +91,14 @@ class paymentType extends Component {
                       <strong> Order Total</strong>
                     </div>
                     <div>
-                      <strong>$calculate total</strong>
+                      <strong>${localStorage.getItem("total_charge")}</strong>
                     </div>
                   </div>
                 </li>
                 <li>
                   <button
                     type="button"
-                    // onClick={placeOrderHandler}
+                    onClick={this.confirmOrder}
                     className="primary block"
                     // disabled={cart.cartItems.length === 0}
                   >
@@ -123,9 +111,10 @@ class paymentType extends Component {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }
 }
 
-export default paymentType  ;
+export default placeOrder  ;

@@ -1,5 +1,7 @@
 import React, { Component} from 'react'
 import CheckoutSteps from '../order_and_payment/checkout_steps';
+import UserNavigation from '../Navigation/User_Navigation';
+import Footer from '../Footer/Footer';
 
 const initialState = {
   payType: ''
@@ -19,37 +21,38 @@ class paymentType extends Component {
   onSubmit(e) {
     e.preventDefault();
     let paymentMethod = this.state.payType;
+    localStorage.setItem("payment_type", this.state.payType);
     console.log('Payment Method', paymentMethod);
-    window.location=''
+    window.location='/placeOrder'
   }
   render (){
     return(
       <div>
-        <br/>  
+        <UserNavigation/>
+        <br/><br/><br/><br/>
         <CheckoutSteps step1 step2 step3></CheckoutSteps>
-        <form className="form" onSubmit={this.onSubmit}>
-          <div>
-            <h1>Payment Method</h1>
-          </div>
-          <div>
+        <div className="shippingForm">
+          <form className="form shipBack" onSubmit={this.onSubmit}>
             <div>
-              <input type="radio" id="paypal" value="PayPal" name="payType" required checked onChange={this.onChange}/>
-              <label htmlFor="paypal">PayPal</label>
+              <h1 className="orderHead">Payment Method</h1>
             </div>
-          </div>
-          <div>
+            <br/>
             <div>
-              <input type="radio" id="stripe" value="Stripe" name="payType" required onChange={this.onChange}/>
-              <label htmlFor="stripe">Stripe</label>
+              <label>Payment Type</label>
+              <select class="form-select orderInput">
+                <option value="PayPal"> PayPal </option>
+              </select>
             </div>
-          </div>
-          <div>
-            <label />
-            <button className="primary" type="submit">
-              Continue
-            </button>
-          </div>
-        </form>
+            <br/>
+            <div>
+              <label />
+              <button className="nextBtn" type="submit">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+        <Footer/>
       </div>
     );
   }

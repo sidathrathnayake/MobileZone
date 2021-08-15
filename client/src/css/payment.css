@@ -1,12 +1,48 @@
 .checkout-steps > div {
-    border-top: 0.4rem #c0c0c0 solid;
-    color: #c0c0c0;
-    flex: 1;
-    padding: 0.5rem,0,0.5rem,0.5rem;
-    font-weight: bold;
-    width: 80%;
-  }
-  .checkout-steps > div.active {
-    border-top-color: #f08000;
-    color: #f08000;
-  }
+  border-top: 0.6rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 0.5rem,0,0.5rem,0.5rem;
+  font-weight: bold;
+  width: 80%;
+}
+.checkout-steps > div.active {
+  border-top-color: #f08000;
+  color: #f08000;
+}
+
+.shippingForm{
+  width: 65%;
+	border-radius: 10px;
+	padding: 3%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+  background: #282939;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  color: #fff;
+  margin-left: 19%;
+}
+
+.orderHead{
+  font-size: 35px;
+  text-decoration: none;
+  color: #fff;
+  outline: slategray;
+  font-weight: 500;
+}
+
+
+.orderInput {
+  border-radius: 0.5rem;
+  border: 0.2rem #a4a4a4 solid;
+  font-size: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 200%;
+}
+
+.shipBack{
+  margin-left: -28%;
+}

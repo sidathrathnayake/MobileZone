@@ -22,6 +22,8 @@ import Normal_Home from './components/Home/Normal_Home';
 import Admin_Home from './components/Home/Admin_Home';
 import Shipping_Address from './components/order_and_payment/shippingAddress';
 import Payment_Type from './components/order_and_payment/payment_type';
+import placeOrder from './components/order_and_payment/place_order';
+import orderSummary from './components/order_and_payment/order_summary';
 
 const App = () => {
 
@@ -41,6 +43,8 @@ const App = () => {
             <Route exact path="/userdetails" component={Read_User}/>
             <Route path="/shipping" component={Shipping_Address}/>
             <Route exact path="/payType" component={Payment_Type}/>
+            <Route exact path="/placeOrder" component={placeOrder}/>
+            <Route exact path="/orderSum" component={orderSummary}/>
         </Switch>   
       </div>
     </Router>
