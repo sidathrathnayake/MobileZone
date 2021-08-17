@@ -17,9 +17,13 @@ app.use(bodyParser.json());
 const admin_routes = require('./routes/admin_route');
 const user_routes = require('./routes/user_route');
 
+//Add item route
+const item_routes = require('./routes/item_route');
+
 //Routes middleware
 app.use(admin_routes);
 app.use(user_routes);
+app.use(item_routes);
 
 //Error Handler(After all middleware routes)
 app.use(errorHandler);
