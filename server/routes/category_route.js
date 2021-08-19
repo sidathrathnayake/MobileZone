@@ -7,10 +7,13 @@ const Category = require("../models/Category");
 /**Importing Multer */
 const multer = require("multer");
 
+// E:\GitHUB\Github-Projects\MobileZone\client\public\uploads\galaxy_s21_5g_highlights_box.0.jpg
+// ../../client/public/uploads/
+
 /**Initializing disk storage */
 const storage = multer.diskStorage({
     destination : (req,file, callback) => {
-        callback(null, "../../client/public/uploads/");
+        callback(null, "E:/GitHUB/Github-Projects/MobileZone/client/public/uploads/");
     },
     filename : (req,file, callback) => {
         callback(null, file.originalname);

@@ -67,9 +67,9 @@ export default class Category_ViewAdmin extends Component {
                             </form><br/>
                             <div class="table-responsive custom-table-responsive">
                                 <table class="table custom-table heading" id="myTable">
-                                    <thead>
+                                    <thead style={{color:"GrayText"}}>
                                         <tr> 
-                                            <th scope="col" >Category Name</th>
+                                            <th scope="col">Category Name</th>
                                             <th scope="col">Category Description</th>
                                             <th scope="col">Category Image</th>
                                             <th scope="col">Category Update</th>
@@ -104,7 +104,7 @@ export default class Category_ViewAdmin extends Component {
                                 </table>
                             </div>
                         </div><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                    </div>
+                    </div><br></br>
                 <Footer/>
             </div>
         )

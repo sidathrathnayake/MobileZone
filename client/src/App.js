@@ -26,6 +26,7 @@ import Category_Update from './components/Category/Category_Update';
 import Category_Delete from './components/Category/Category_Delete';
 import Category_ViewCustomer from './components/Category/Category_ViewCustomer';
 
+
 const App = () => {
 
   return (
@@ -46,6 +47,8 @@ const App = () => {
             <Route exact path="/update-before-category/:categoryName" component={Category_Update}/>
             <Route exact path="/delete-before-category/:categoryName" component={Category_Delete}/>
             <Route exact path="/view-category-customer" component={Category_ViewCustomer}/>
+            
+            
         </Switch>   
       </div>
     </Router>

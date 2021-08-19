@@ -4,6 +4,8 @@ import NormalNavigation from '../Navigation/Normal_Navigation';
 import Footer from '../Footer/Footer';
 import axios from 'axios';
 
+import image1 from '../Category/images/abc.jpg'
+
 const initialState = {
     categoryName: '',
     categoryDescription: '',
@@ -24,14 +26,14 @@ export default class Category_Insert extends Component {
     onFileChange(e) {
         this.setState({ categoryImage: e.target.files[0] });
     }
-    
+
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
     onSubmit(e) {
         e.preventDefault();
         this.state.errorStatus=true;
-        
+
         if (this.state.errorStatus === true) {
           let formData = new FormData ();
           formData.append('categoryName',this.state.categoryName);
@@ -52,51 +54,37 @@ export default class Category_Insert extends Component {
             console.log(error.message);
             alert(error.message)
           })
-        }  
+        }
       }
 
     render() {
         return (
             <div>
                 <NormalNavigation/> <br></br><br></br>
-                    {/* <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-2"></div>
-                            <div class="col-lg-6 col-md-8 login-box">
-                                <div class="col-lg-12 login-key">
-                                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <div className="container container-category-form">
+                        <div class="card card-form">
+                            <h5 class="card-header card-category-heading" style={{fontSize:" x-large"}}>Insert Category</h5>
+                                <div class="card-body">
+                                    <form >
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label label-category">Category Name</label>
+                                            <input type="text" class="form-control control-form" id="exampleInputEmail1" name="categoryName" value={this.state.categoryName} onChange={this.onChange} required/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label label-category" style={{marginLeft:"-127%"}}>Category Description</label>
+                                            <textarea class="form-control control-form-description" name="categoryDescription" value={this.state.categoryDescription} onChange={this.onChange} rows="3" required></textarea>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="exampleInputEmail1" class="form-label label-category-image" style={{marginTop:"0%"}}>Category Image</label>
+                                            <input class="form-control category-file" type="file" id="formFile" name="categoryImage" onChange={this.onFileChange} required/>
+                                        </div>
+                                        <div className="mb-2">
+                                            <button type="submit" class="btn btn-primary btn-insert-category" onClick={this.onSubmit}>Insert Category</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="col-lg-12 login-title">
-                                    Add Category To The System
-                                </div>
-                                <div class="col-lg-12 login-form">
-                                    <div class="col-lg-12 login-form">
-                                        <form>
-                                            <div class="form-group">
-                                                <label class="form-control-label">CATEGORY NAME</label>
-                                                <input type="text" class="form-control"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-control-label">CATEGORY DESCRIPTION</label>
-                                                <input type="password" class="form-control"/>
-                                                <textarea class="form-control"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-control-label">CATEGORY IMAGE</label>
-                                                <input type="password" class="form-control"/>
-                                            </div>
-                                            <div class="col-lg-12 loginbttm">
-                                                <div class="col-lg-6 login-btm login-button">
-                                                    <button type="submit" class="btn btn-outline-primary">LOGIN</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                
-                            </div>
                         </div>
-                    </div><br></br> */}
+                    </div><br></br><br></br>
                 <Footer/>
             </div>
         )

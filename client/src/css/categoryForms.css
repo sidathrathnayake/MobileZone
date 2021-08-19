@@ -1,186 +1,50 @@
-/* body {
-    background: #222D32;
-    font-family: 'Roboto', sans-serif;
-}
-
-.login-box {
-    margin-top: 75px;
-    height: auto;
-    background: #1A2226;
-    text-align: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.login-key {
-    height: 100px;
-    font-size: 80px;
-    line-height: 100px;
-    background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.login-title {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 30px;
-    letter-spacing: 2px;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #ECF0F5;
-}
-
-.login-form {
-    margin-top: 25px;
-    text-align: left;
-}
-
-input[type=text] {
-    background-color: #1A2226;
-    border: none;
-    border-bottom: 2px solid #0DB8DE;
-    border-top: 0px;
-    border-radius: 0px;
-    font-weight: bold;
-    outline: 0;
-    margin-bottom: 20px;
-    padding-left: 0px;
-    color: #ECF0F5;
-}
-
-input[type=password] {
-    background-color: #1A2226;
-    border: none;
-    border-bottom: 2px solid #0DB8DE;
-    border-top: 0px;
-    border-radius: 0px;
-    font-weight: bold;
-    outline: 0;
-    padding-left: 0px;
-    margin-bottom: 20px;
-    color: #ECF0F5;
-}
-
-.form-group {
-    margin-bottom: 40px;
-    outline: 0px;
-}
-
-.form-control:focus {
-    border-color: inherit;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-bottom: 2px solid #0DB8DE;
-    outline: 0;
-    background-color: #1A2226;
-    color: #ECF0F5;
-}
-
-input:focus {
-    outline: none;
-    box-shadow: 0 0 0;
-}
-
-label {
-    margin-bottom: 0px;
-}
-
-.form-control-label {
-    font-size: 10px;
-    color: #6C6C6C;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.btn-outline-primary {
-    border-color: #0DB8DE;
-    color: #0DB8DE;
-    border-radius: 0px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.btn-outline-primary:hover {
-    background-color: #0DB8DE;
-    right: 0px;
-}
-
-.login-btm {
-    float: left;
-}
-
-.login-button {
-    padding-right: 0px;
-    text-align: right;
-    margin-bottom: 25px;
-}
-
-.login-text {
-    text-align: left;
-    padding-left: 0px;
-    color: #A2A4A4;
-}
-
-.loginbttm {
-    padding: 0px;
-}
-*/
-
 /*Category View-Admin Table Related CSS*/
 .category-table-body {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     background-color: #19191d;
-    font-weight: 300;  
-   
-}   
- 
-.category-table-content {
-    padding: 7rem 0; 
-    
+    font-weight: 300;
+
 }
-  
+.category-table-content {
+    padding: 7rem 0;
+
+}
 .h2 {
     font-size: 20px;
-    color: #fff; }
-  
+    color: #fff;
+}
 .custom-table {
-    min-width: 900px; 
+    min-width: 900px;
     margin-top: 4%;
     width: 97%;
-  
 }
-   
 .custom-table tbody th, .custom-table tbody td {
     color: rgb(184, 182, 182);
     font-weight: 400;
     padding-bottom: 20px;
     padding-top: 20px;
-    font-weight: 300; }
-          
+    font-weight: 300;
+}
 .custom-table tbody tr th, .custom-table tbody tr td {
     background: #242430;
     border: none;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
-    transition: .3s all ease; }
- 
+    transition: .3s all ease;
+}
 .heading {
     background-color: rgb(206, 207, 209);
 }
-
 .custom-table tbody tr.spacer td {
     padding: 0 !important;
     height: 3px;
-    
     border-radius: 0 !important;
-    background: transparent !important; }
-
+    background: transparent !important;
+}
 .custom-table tbody tr.active th, .custom-table tbody tr.active td, .custom-table tbody tr:hover th, .custom-table tbody tr:hover td {
     color: #fff;
-    background: #2e2e36; 
+    background: #2e2e36;
 }
-
 #category-vieadmin-heading {
     font-size: xx-large;
     margin-top: 1%;
@@ -194,12 +58,11 @@ th {
     width: 40%;
     height: 40px;
     margin-top: 10%;
-    
-}  
+}
 .edit-btn:hover{
     background-color: orangered;
     border-color: silver;
-} 
+}
 .td {
     position: relative;
     left: 80px;
@@ -219,8 +82,68 @@ th {
     box-shadow: none;
 }
 
-  
-  
-  
-  
- 
+
+/*Form related CSS*/
+
+.container-category-form{
+  margin-top: 6%;
+  width: 45%;
+}
+.card-form {
+  margin-top: 8%;
+}
+.control-form {
+  width: 325%;
+  margin-left: -112.5%;
+}
+.label-category {
+  margin-left: -112%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+}
+.control-form-description {
+  width: 354%;
+  margin-left: -127%;
+}
+.category-file {
+  width: 203%;
+  margin-left: -51%;
+}
+.label-category-image {
+  margin-left: -51%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+}
+.btn-insert-category {
+  margin-left: -190%;
+  width: 120%;
+}
+.card-category-heading {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*Category Card*/
+.container-cat {
+  margin-top: 0%;
+  margin-right: 0%;
+}
+.inner-cat {
+  overflow: hidden;
+}
+.inner-cat img{
+  transition: all 1.5s ease;
+}
+.inner-cat:hover img{
+  transform: scale(1.5);
+}
+.card-cat {
+  margin-top: 4%;
+  margin-left: -18%;
+}
+.category-h4 {
+  font-size: 50px;
+  margin-top: 5%;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
