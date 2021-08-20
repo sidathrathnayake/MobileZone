@@ -9,47 +9,51 @@ import Footer from '../Footer/Footer';
 /**Importing the axios package */
 import axios from 'axios';
 
-export default class Category_ViewCustomer extends Component {
+export default class ItemV_ViewCustomer extends Component {
     constructor(props){
         super(props)
         this.state = {
-            category: []
+            items: []
         }
     }
     /**This method is to retreive the research paper amount */
     componentDidMount() {
-        axios.get('http://localhost:5000/category/retrieve')
+        axios.get(`http://localhost:5000/api/products/category/${this.props.match.params.categoryName}`)
         .then(response => {
-          this.setState({ category: response.data })
+          this.setState({ items: response.data })
+          
         })
     }
     /**This method is to navigate to the ViewOne Pet page */
-    navigateToCategory_ViewCustomerPage(e, categoryName) {
-        window.location = `/view-item-customer/${categoryName}`
+    navigateToProductScreenPage(e, id) {
+        window.location = `/view-product/${id}`
     }
+
+   
     render() {
         return (
             <div>
                 <NormalNavigation/><br></br><br></br>
-                <h4 className="category-h4" style={{color:"black"}}>Shop By Category</h4>
+                <h4 className="category-h4" style={{color:"black"}}>Shop By Item</h4>
                 <div className="container container-cat">
                
                     <div className="row justify-content-right card-cat">
-                    {this.state.category.length > 0 && this.state.category.map((item, index) => (
+                    {this.state.items.length > 0 && this.state.items.map((item, index) => (
                         <div className="col-md-3">
                             <div class="card shadow" style={{width: "20rem"}}>
                                 <div className="inner inner-cat">
-                                    <img class="card-img-top" src={`/uploads/${item.categoryImage}`} style={{height:"300px"}} alt="Card image cap"/>
+                                    <img class="card-img-top"  style={{height:"300px"}} alt="Card image cap"/>
                                 </div>
                                 
                                 <div class="card-body">
-                                    <h5 class="card-title">{item.categoryName}  </h5>
-                                    <p class="card-text">{item.categoryDescription}</p>
-                                    <a class="btn btn-outline-success" onClick={e => this.navigateToCategory_ViewCustomerPage(e, item.categoryName)}>View Products</a>
+                                    <h5 class="card-title">{item.itemName}  </h5>
+                                    <p class="card-text">{item.description}</p>
+                                    <a class="btn btn-outline-success" onClick={e => this.navigateToProductScreenPage(e, item.id)}>View Products</a>
                                 </div>
+                               
                             </div><br></br><br></br>
                         </div>
-                   ))}
+                    ))}
                     </div>
  
                 </div><br></br><br></br>

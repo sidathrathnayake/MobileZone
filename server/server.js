@@ -37,8 +37,8 @@ process.on("unhandledRejection", (err, promise) => {
 
 //Viraj
 const categoryRouter = require("./routes/category_route");
-//const productRouter = require("./routes/product_route");
+const productRouter = require("./routes/itemv_route");
 
 //Viraj
 app.use("/category",categoryRouter);
-//app.use("/api/products",productRouter);
+app.use("/api/products",productRouter);
