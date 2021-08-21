@@ -12,6 +12,8 @@ import Cart_Navigation from '../components/Navigation/Cart_Navigation';
 /**Importing the footer */
 import Footer from '../components/Footer/Footer';
 
+import image1 from '../components/Category/images/abc.jpg'
+
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
@@ -33,7 +35,7 @@ const ProductScreen = ({ match, history }) => {
     return (
       <div>
         <Cart_Navigation/><br></br><br></br>
-      
+      <div className="container product-screen">
       <div className="productscreen">
       {loading ? (
         <h2>Loading...</h2>
@@ -43,28 +45,29 @@ const ProductScreen = ({ match, history }) => {
         <>
           <div className="productscreen__left">
             <div className="left__image">
+              <img src={`/uploads/${itemv.itemImage}`} style={{height:"320px",marginLeft:"40%",borderRadius:"7px",width:"50%"}} />
               {/* <img src={product.imageUrl} alt={product.name} /> */}
             </div>
             <div className="left__info">
               <p className="left__name">{itemv.itemName}</p>
-              <p>Price: ${itemv.itemPrice}</p>
-              <p>Description: {itemv.description}</p>
+              <p className="left__price-description">Price : Rs. {itemv.itemPrice}.00</p>
+              <p className="left__price-description">Description : {itemv.description}</p>
             </div>
           </div>
           <div className="productscreen__right">
             <div className="right__info">
               <p>
-                Price:
-                <span>${itemv.itemPrice}</span>
+                Price :
+                <span>Rs. {itemv.itemPrice}.00</span>
               </p>
               <p>
-                Status:
+                Status :
                 <span>
                   {itemv.countInStock > 0 ? "In Stock" : "Out of Stock"}
                 </span>
               </p>
               <p>
-                Qty
+                Qty : 
                 <select value={qty} onChange={(e) => setQty(e.target.value)}>
                   {[...Array(itemv.countInStock).keys()].map((x) => (
                     <option key={x + 1} value={x + 1}>
@@ -74,7 +77,7 @@ const ProductScreen = ({ match, history }) => {
                 </select>
               </p>
               <p>
-                <button type="button" onClick={addToCartHandler}>
+                <button type="button" className="add-to-cart" onClick={addToCartHandler}>
                   Add To Cart
                 </button>
               </p>
@@ -82,6 +85,7 @@ const ProductScreen = ({ match, history }) => {
           </div>
         </>
       )}
+    </div>
     </div><br></br>
     <Footer/>
     </div>

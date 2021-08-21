@@ -1,109 +1,58 @@
 /*Category View-Admin Table Related CSS*/
-.category-table-body {
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    background-color: #19191d;
-    font-weight: 300;
-
+.table-container{
+  width:98%;
+  margin-top: 8%;
+  /* position: relative; */
 }
-.category-table-content {
-    padding: 7rem 0;
-
+.admin-searchBar{
+  margin-top: 0%;
+  width: 30%;
+  margin-left: 74.5%;
+}
+.admin-table-body {
+  background-color: #19191d;
+  height: 800px;
+}
+.bar {
+  border-color: rgb(190, 191, 196);
+  background-color: #19191d;
+  box-shadow: none;
+  color:cornsilk;
 }
 .h2 {
-    font-size: 20px;
-    color: #fff;
+  font-size: 40px;
+  color: #fff;
+  margin-top: 5%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.custom-table {
-    min-width: 900px;
-    margin-top: 4%;
-    width: 97%;
-}
-.custom-table tbody th, .custom-table tbody td {
-    color: rgb(184, 182, 182);
-    font-weight: 400;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    font-weight: 300;
-}
-.custom-table tbody tr th, .custom-table tbody tr td {
-    background: #242430;
-    border: none;
-    -webkit-transition: .3s all ease;
-    -o-transition: .3s all ease;
-    transition: .3s all ease;
-}
-.heading {
-    background-color: rgb(206, 207, 209);
-}
-.custom-table tbody tr.spacer td {
-    padding: 0 !important;
-    height: 3px;
-    border-radius: 0 !important;
-    background: transparent !important;
-}
-.custom-table tbody tr.active th, .custom-table tbody tr.active td, .custom-table tbody tr:hover th, .custom-table tbody tr:hover td {
-    color: #fff;
-    background: #2e2e36;
-}
-#category-vieadmin-heading {
-    font-size: xx-large;
-    margin-top: 1%;
-}
-th {
-    color: #25252b;
-}
-.edit-btn {
-    border-color: blanchedalmond;
-    color: silver;
-    width: 40%;
-    height: 40px;
-    margin-top: 10%;
-}
-.edit-btn:hover{
-    background-color: orangered;
-    border-color: silver;
-}
-.td {
-    position: relative;
-    left: 80px;
-    top: 2px;
-}
-.form-inline {
-    width: 40%;
-    margin-left: 70%;
-    margin-top: -6.5%;
-}
-#searchBar {
-    width: 150%;
-    margin-left: 20%;
-    margin-top: -19%;
-    background-color: #19191d;
-    color:cornsilk;
-    box-shadow: none;
-}
-
-
 /*Form related CSS*/
-
+.form-body-category {
+  background-color: #333;  
+}
 .container-category-form{
   margin-top: 6%;
   width: 45%;
+  border-radius: 2px;
 }
 .card-form {
   margin-top: 8%;
+  
 }
 .control-form {
   width: 325%;
   margin-left: -112.5%;
+  box-shadow: none;
 }
 .label-category {
   margin-left: -112%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: larger;
+  color: whitesmoke;
 }
 .control-form-description {
   width: 354%;
   margin-left: -127%;
+  
 }
 .category-file {
   width: 203%;
@@ -113,11 +62,14 @@ th {
   margin-left: -51%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: larger;
+  color: whitesmoke;
 }
 .btn-insert-category {
   margin-left: -190%;
   width: 120%;
+  color: whitesmoke;
 }
+
 .card-category-heading {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }

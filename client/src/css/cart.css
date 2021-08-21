@@ -11,18 +11,34 @@
   }
   .left__image {
     margin: 1rem;
+    margin-left: -28%;
     flex: 0.6;
+  }
+  .left__image img{
+    transition: all 0.5s ease;
+  }
+  .left__image:hover img{
+    transform: scale(1.1);
   }
   .left__info {
     margin: 1rem;
     flex: 0.4;
-    background: #fff;
+    background: white;
     height: fit-content;
     font-size: 0.9rem;
+    margin-left: -6%;
+    border-radius: 6px;
   }
   .left__name {
     font-weight: bold;
     font-size: 1.3rem;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .left__price-description {
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
   }
   .left__info > p,
   .right__info > p {
@@ -33,20 +49,28 @@
   .right__info > p:last-child {
     border: none;
   }
+  
   .productscreen__right {
     flex: 0.2;
+    
   }
   .right__info {
     width: 250px;
     margin: 1rem;
     background: #fff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    color: black;
+    
+    
   }
   .right__info p {
     padding: 1rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    color: black;
   }
   .right__info p > button {
     grid-column: 1/-1;
@@ -60,6 +84,15 @@
   }
   .right__info select {
     padding: 10px 16px;
+  }
+  .product-screen {
+    background-color: #222;
+    margin-top: 6%;
+    width: 60%;
+    border-radius: 10px;;
+  }
+  .add-to-cart:hover {
+    opacity: 0.9;
   }
   @media (max-width: 960px) {
     .productscreen {
@@ -139,6 +172,7 @@
   
   .cartscreen__right div button:hover {
     opacity: 0.9;
+    
   }
   
   @media (max-width: 1320px) {

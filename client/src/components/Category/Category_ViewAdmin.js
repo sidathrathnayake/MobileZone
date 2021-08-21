@@ -52,61 +52,64 @@ export default class Category_ViewAdmin extends Component {
     }
     render() {
         return (
-            <div className="category-table-body">
-                <NormalNavigation/>
-                    <div class="category-table-content">
-                        <div class="container">
-                            <h2 class="mb-5 h2" id="category-vieadmin-heading"><center>Available Categories</center></h2>
-                            <form className="form-inline row">
-                                    <div class="input-group mb-4 border rounded-pill p-1">
-                                        <div class="input-group-prepend border-0">
-                                        <button type="button" class="btn btn-link text-info"><i class="fa fa-search"></i></button>
-                                        <input type="search" placeholder="What're you searching for?" onKeyUp={this.myFunction}  aria-describedby="button-addon4" id="searchBar" class="form-control bg-none border-0"/>
-                                        </div>
+            <body className=""> 
+                <div className="admin-table-body">
+                <NormalNavigation/><br></br><br></br>
+                <div>
+                    <h2 class="mb-10 h2" id="category-vieadmin-heading"><center>Available Categories</center></h2>
+                    <form class="d-flex admin-searchBar">
+                        <input class="form-control me-3 bg-none bar" type="search" onKeyUp={this.myFunction} id="searchBar" placeholder="Search by Category Name" aria-label="Search"/>
+                    </form>
+                <table class="table table-hover table-dark table-container" id="myTable">
+                    <thead style={{backgroundColor:"blue"}}>
+                        <tr>
+                            <th scope="col">Category Name</th>    
+                            <th scope="col">Category Description</th>
+                            <th scope="col">Category Image</th>
+                            <th scope="col">Category Update</th>
+                            <th scope="col">Category Delete</th>    
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {this.state.category.length > 0 && this.state.category.map((item, index) => (
+                            <tr>
+                                <td>
+                                    <div style={{position:"relative", top:"30px"}} >
+                                        {item.categoryName}
                                     </div>
-                            </form><br/>
-                            <div class="table-responsive custom-table-responsive">
-                                <table class="table custom-table heading" id="myTable">
-                                    <thead style={{color:"GrayText"}}>
-                                        <tr> 
-                                            <th scope="col">Category Name</th>
-                                            <th scope="col">Category Description</th>
-                                            <th scope="col">Category Image</th>
-                                            <th scope="col">Category Update</th>
-                                            <th scope="col">Category Delete</th>
-                                        </tr>    
-                                    </thead>
-                                    <tbody>
-                                    {this.state.category.length > 0 && this.state.category.map((item, index) => (
-                                        <tr key={index} >              
-                                            <td>
-                                                <div style={{position:"relative", top:"30px"}} >
-                                                    {item.categoryName}
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div  style={{position:"relative", top:"30px"}}>
-                                                    {item.categoryDescription}
-                                                </div>
-                                            </td>
-                                            <td width="10%" >
-                                                <img src={`/uploads/${item.categoryImage}`} alt="..."style={{width:"90%", borderRadius:"15%"}} id="sImage" />
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-outline-dark edit-btn far fa-edit" onClick={e => this.navigateToUpdateCategoryPage(e, item.categoryName)}>Edit</button>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-outline-dark edit-btn far fa-trash-alt" onClick={e => this.navigateToDeleteCategoryPage(e, item.categoryName)}>Delete</button>
-                                            </td>
-                                        </tr>  
-                                        ))}  
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                    </div><br></br>
+                                </td>
+                                <td>
+                                    <div  style={{position:"relative", top:"30px"}}>
+                                        {item.categoryDescription}
+                                    </div>
+                                </td>
+                                <td width="10%">
+                                    <img src={`/uploads/${item.categoryImage}`} alt="..."style={{width:"90%", borderRadius:"15%"}} id="sImage" />
+                                </td>
+                                <td>
+                                    <div  style={{position:"relative", top:"22px"}}>
+                                        <button type="button" class="btn btn-outline-warning">
+                                            <i class="far fa-edit"></i>
+                                            Update
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div  style={{position:"relative", top:"22px"}}>
+                                        <button type="button" class="btn btn-outline-danger">
+                                            <i class="far fa-trash-alt"></i>
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        ))}     
+                    </tbody>
+                </table><br></br>
+                </div>
                 <Footer/>
             </div>
+            </body>
         )
     }
 }

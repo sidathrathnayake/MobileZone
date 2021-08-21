@@ -54,8 +54,8 @@ const App = () => {
             <Route exact path="/view-category-customer" component={Category_ViewCustomer}/>
 
             <Route exact path="/view-item-customer/:categoryName" component={ItemV_ViewCustomer}/>
-            {/* <Route exact path="/view-product/:id" component={ProductScreen}/> */}
-            <Route exact path="/view-product/:id" component={example}/>
+            <Route exact path="/view-product/:id" component={ProductScreen}/>
+            {/* <Route exact path="/view-product/:id" component={example}/> */}
             <Route exact path="/cart" component={CartScreen}/>
             
             

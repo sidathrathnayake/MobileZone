@@ -42,7 +42,7 @@ export default class ItemV_ViewCustomer extends Component {
                         <div className="col-md-3">
                             <div class="card shadow" style={{width: "20rem"}}>
                                 <div className="inner inner-cat">
-                                    <img class="card-img-top"  style={{height:"300px"}} alt="Card image cap"/>
+                                    <img class="card-img-top" src={`/uploads/${item.itemImage}`} style={{height:"300px"}} alt="Card image cap"/>
                                 </div>
                                 
                                 <div class="card-body">

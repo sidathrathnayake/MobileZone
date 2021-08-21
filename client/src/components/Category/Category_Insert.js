@@ -59,12 +59,14 @@ export default class Category_Insert extends Component {
 
     render() {
         return (
-            <div>
+            <div className="form-body-category">
                 <NormalNavigation/> <br></br><br></br>
                     <div className="container container-category-form">
                         <div class="card card-form">
-                            <h5 class="card-header card-category-heading" style={{fontSize:" x-large"}}>Insert Category</h5>
-                                <div class="card-body">
+                            <h5 class="card-header card-category-heading" style={{fontSize:" x-large",backgroundColor:"black",color:"whitesmoke"}}>Insert Category</h5>
+                            
+                                <div class="card-body" style={{backgroundColor:"#19191d"}}>
+                                <hr style={{color:"white",marginTop:"-2.5%",height:"2px",width:"104%",marginLeft:"-2%"}}></hr>
                                     <form >
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label label-category">Category Name</label>
@@ -79,7 +81,7 @@ export default class Category_Insert extends Component {
                                             <input class="form-control category-file" type="file" id="formFile" name="categoryImage" onChange={this.onFileChange} required/>
                                         </div>
                                         <div className="mb-2">
-                                            <button type="submit" class="btn btn-primary btn-insert-category" onClick={this.onSubmit}>Insert Category</button>
+                                            <button type="submit" class="btn btn-outline-warning btn-insert-category" onClick={this.onSubmit}>Insert Category</button>
                                         </div>
                                     </form>
                                 </div>
