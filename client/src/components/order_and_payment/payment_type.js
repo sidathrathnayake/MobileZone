@@ -21,8 +21,7 @@ class paymentType extends Component {
   onSubmit(e) {
     e.preventDefault();
     let paymentMethod = this.state.payType;
-    localStorage.setItem("payment_type", this.state.payType);
-    console.log('Payment Method', paymentMethod);
+    localStorage.setItem("payment_type", "PayPal");
     window.location='/placeOrder'
   }
   render (){
@@ -39,7 +38,7 @@ class paymentType extends Component {
             <br/>
             <div>
               <label>Payment Type</label>
-              <select class="form-select orderInput">
+              <select class="form-select orderInput" name="payType">
                 <option value="PayPal"> PayPal </option>
               </select>
             </div>

@@ -12,24 +12,33 @@
 }
 
 .shippingForm{
-  width: 65%;
+  width: 50%;
 	border-radius: 10px;
-	padding: 3%;
+	padding: 2%;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
   background: #282939;
   margin-top: 4%;
   margin-bottom: 4%;
   color: #fff;
-  margin-left: 19%;
+  margin-left: 25%;
 }
 
 .orderHead{
-  font-size: 35px;
+  font-size: 37px;
   text-decoration: none;
   color: #fff;
   outline: slategray;
   font-weight: 500;
+  margin-left:200px;
+}
+
+.nxtBtn{
+  width:130px;
+  margin-bottom:5px;
+  margin-left:600px;
+  margin-top:30px;
+  padding:0;
 }
 
 
@@ -44,5 +53,9 @@
 }
 
 .shipBack{
-  margin-left: -28%;
+  margin-left: -33%;
 }
+
+/* .userOrderTable{
+  dis
+} */

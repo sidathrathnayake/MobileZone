@@ -17,11 +17,13 @@ app.use(bodyParser.json());
 const admin_routes = require('./routes/admin_route');
 const user_routes = require('./routes/user_route');
 const order_payment_routes = require('./routes/order_payment_route');
+const shipping_routes = require('./routes/shipping_route');
 
 //Routes middleware
 app.use(admin_routes);
 app.use(user_routes);
-app.use(order_payment_routes);
+app.use("/order",order_payment_routes);
+app.use("/shipping",shipping_routes);
 
 //Error Handler(After all middleware routes)
 app.use(errorHandler);

@@ -1,29 +1,46 @@
-import React, { Component} from 'react'
+import React, { Component} from 'react';
+import axios from 'axios';
 import CheckoutSteps from '../order_and_payment/checkout_steps';
 import { PayPalButton } from "react-paypal-button-v2";
 import UserNavigation from '../Navigation/Normal_Navigation';
 import Footer from '../Footer/Footer';
 
-const initialState = {
-  payType: ''
-}
+
 class orderSummary extends Component {
-  constructor(props) {
-    super(props);
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.state = initialState;
-  }
   
-  onChange(e) {
-   this.setState({ [e.target.name]: e.target.value })
-  }
-  
-  onSubmit(e) {
-    e.preventDefault();
-    let paymentMethod = this.state.payType;
-    console.log('Payment Method', paymentMethod);
-    window.location=''
+  onPay() {
+    let Shipping = {
+      fullName:localStorage.getItem("Shipping_name"),
+      address:localStorage.getItem("Shipping_address"),
+      postalCode:localStorage.getItem("Shipping_postalCode"),
+      country:localStorage.getItem("Shipping_country")
+    }
+    
+    axios.post('http://localhost:5000/shipping/add', Shipping)
+    .then(response => {
+      let Order = {
+        shippingId: response.data.data.shippingId,
+        user:'raven',
+        orderDate:'08.08.2021',
+        totalItemValue:localStorage.getItem("order_Total"),
+        shippingCharge:localStorage.getItem("Shipping_charge"),
+        taxCharge:localStorage.getItem("tax_charge"),
+        totalCharge:localStorage.getItem("total_charge"),
+        paymentStatus:'Paid'
+      }
+      axios.post('http://localhost:5000/order/add', Order)
+      .then(response => {
+        alert('Data successfully inserted!!!')
+        window.location='/'
+      })
+      .catch(error => {
+        alert(error.message)
+      })
+    })
+    .catch(error => {
+      alert(error.message)
+    })
+    // 
   }
   render (){
     return(
@@ -114,17 +131,10 @@ class orderSummary extends Component {
                 <li>
                 <PayPalButton
                   amount={localStorage.getItem("total_charge")}
-                  shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                  shippingPreference="NO_SHIPPING"
                   onSuccess={(details, data) => {
-                    alert(details.payer.name.given_name+", Your Payment is successful");
-
-                    // OPTIONAL: Call your server to save the transaction
-                    return fetch("/paypal-transaction-complete", {
-                      method: "post",
-                      body: JSON.stringify({
-                        orderID: data.orderID
-                      })
-                    });
+                    // alert(details.payer.name.given_name+", Your Payment is successful");
+                    this.onPay();
                   }}
                   catchError={(error)=>{
                     alert(" Your Payment is Failed");

@@ -24,13 +24,6 @@ class shippingAddress extends Component {
   
   onSubmit(e) {
     e.preventDefault();
-    let Shipping = {
-      name: this.state.name,
-      address: this.state.address,
-      postalCode: this.state.postalCode,
-      country: this.state.country
-    }
-    console.log('Shipping Details', Shipping);
     localStorage.setItem("Shipping_name", this.state.name);
     localStorage.setItem("Shipping_address", this.state.address);
     localStorage.setItem("Shipping_postalCode", this.state.postalCode);
@@ -76,7 +69,7 @@ class shippingAddress extends Component {
             <br/>
             <div>
               <label />
-              <button className="primary" type="submit">
+              <button className="btn btn-light nxtBtn" type="submit">
                 Next
               </button>
             </div>

@@ -24,6 +24,7 @@ import Shipping_Address from './components/order_and_payment/shippingAddress';
 import Payment_Type from './components/order_and_payment/payment_type';
 import placeOrder from './components/order_and_payment/place_order';
 import orderSummary from './components/order_and_payment/order_summary';
+import userViewOrders from './components/order_and_payment/user_view_orders';
 
 const App = () => {
 
@@ -45,6 +46,7 @@ const App = () => {
             <Route exact path="/payType" component={Payment_Type}/>
             <Route exact path="/placeOrder" component={placeOrder}/>
             <Route exact path="/orderSum" component={orderSummary}/>
+            <Route exact path="/userViewOrd" component={userViewOrders}/>
         </Switch>   
       </div>
     </Router>
