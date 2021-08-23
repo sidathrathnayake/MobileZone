@@ -13,101 +13,55 @@ class placeOrder extends Component {
     return(
       <div>
         <UserNavigation/>
-        <br/><br/><br/><br/>
-        <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
-        <div className="row top">
+        <div className="row orderPage">
           <div className="col-8">
-            <ul>
-              <li>
-                <div className="card card-body">
-                  <h2>Shipping</h2>
-                  <p>
-                    <strong>Name:</strong> {localStorage.getItem("Shipping_name")} <br />
-                    <strong>Address: </strong> {localStorage.getItem("Shipping_address")},
-                    {localStorage.getItem("Shipping_country")}
-                    ,{localStorage.getItem("Shipping_postalCode")}
+                <div className="card card-body orderCard">
+                <h2 id="ordSummaryH2">Shipping Details</h2>
+                <hr id="hrLine"/>
+                  <p className="ordSummary">
+                    <strong>Name:</strong>&emsp;&emsp;&ensp;&nbsp;&ensp;&ensp;&nbsp;{localStorage.getItem("Shipping_name")} <br />
+                    <strong>Address: </strong>&emsp;&emsp;&nbsp;{localStorage.getItem("Shipping_address")}<br />
+                    <strong>Postal Code: </strong>&nbsp;{localStorage.getItem("Shipping_postalCode")}<br />
+                    <strong>Country: </strong>&emsp;&emsp;&nbsp;{localStorage.getItem("Shipping_country")}<br />
                   </p>
                 </div>
-              </li>
-              <li>
-                <div className="card card-body">
-                  <h2>Payment</h2>
-                  <p>
-                    <strong>Method:</strong>{localStorage.getItem("payment_type")}
+                <br/>
+                <div className="card card-body orderCard">
+                  <h2 id="ordSummaryH2">Payment Method</h2>
+                  <hr id="hrLine"/>
+                  <p className="ordSummary">
+                    <strong>Method:</strong>&emsp;&emsp;&emsp;{localStorage.getItem("payment_type")}
                   </p>
                 </div>
-              </li>
-              <li>
-                <div className="card card-body">
-                  <h2>Order Items</h2>
-                  {/* <ul>
-                    {cart.cartItems.map((item) => (
-                      <li key={item.product}>
-                        <div className="row">
-                          <div className="min-30">
-                            <Link to={`/product/${item.product}`}>
-                              {item.name}
-                            </Link>
-                          </div>
-  
-                          <div>
-                            {item.qty} x ${item.price} = ${item.qty * item.price}
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul> */}
-                </div>
-              </li>
-            </ul>
           </div>
           <div className="col-3">
-            <div className="card card-body">
-              <ul>
-                <li>
-                  <h2>Order Summary</h2>
-                </li>
-                <li>
-                  <div className="row">
-                    <div>Items Total</div>
-                    <div>${localStorage.getItem("order_Total")}</div>
+            <div className="card card-body totalBody">
+                  <h2 id="ordSummaryH2">Order Summary</h2>
+                  <hr id="hrLine"/>
+                  <div className="row ordTotal">
+                    <div>Items Total:&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;${localStorage.getItem("order_Total")}</div>
                   </div>
-                </li>
-                <li>
-                  <div className="row">
-                    <div>Shipping</div>
-                    <div>${localStorage.getItem("Shipping_charge")}</div>
+                
+               
+                  <div className="row ordTotal">
+                    <div>Shipping Charge:&emsp;&emsp;&nbsp;&nbsp;&nbsp;${localStorage.getItem("Shipping_charge")}</div>
+                    <div></div>
                   </div>
-                </li>
-                <li>
-                  <div className="row">
-                    <div>Tax</div>
-                    <div>${localStorage.getItem("tax_charge")}</div>
+                
+                  <div className="row ordTotal">
+                    <div>Tax Charge:&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;${localStorage.getItem("tax_charge")}</div>
+                    <div></div>
                   </div>
-                </li>
-                <li>
-                  <div className="row">
+              
+                  <div className="row ordTotal">
                     <div>
-                      <strong> Order Total</strong>
-                    </div>
-                    <div>
-                      <strong>${localStorage.getItem("total_charge")}</strong>
+                      <strong> Order Total:&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${localStorage.getItem("total_charge")}</strong>
                     </div>
                   </div>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    onClick={this.confirmOrder}
-                    className="primary block"
-                    // disabled={cart.cartItems.length === 0}
-                  >
+                
+                  <button type="button" className="btn" id="placeOrderbtn" onClick={this.confirmOrder} >
                     Place Order
                   </button>
-                </li>
-                {/* {loading && <LoadingBox></LoadingBox>}
-                {error && <MessageBox variant="danger">{error}</MessageBox>} */}
-              </ul>
             </div>
           </div>
         </div>

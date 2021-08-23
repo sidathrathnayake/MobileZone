@@ -14,7 +14,7 @@ router.post("/add", async(req,res) => {
         orderId : 'ORD'+gen(),
         shippingId : req.body.shippingId,
         user : req.body.user,
-        orderDate : req.body.orderDate,
+        orderDate : new Date(),
         totalItemValue : parseFloat(req.body.totalItemValue),
         shippingCharge : parseFloat(req.body.shippingCharge),
         taxCharge : parseFloat(req.body.taxCharge),

@@ -39,41 +39,40 @@ class shippingAddress extends Component {
     return(
       <div>
         <UserNavigation/>
-        <br/><br/><br/><br/>
-        <CheckoutSteps step1 step2></CheckoutSteps>
-        <div className="shippingForm">
-          <form className="form shipBack" onSubmit={this.onSubmit}>
-            <div>
-              <h1 className="orderHead">Shipping Details</h1>
-            </div>
-            <br/>
-            <div>
-              <label htmlFor="name" class="form-label">Full Name</label>
-              <input type="text" id="name" className="form-control orderInput" name="name" placeholder="Enter Your Full Name" value={this.state.name} onChange={this.onChange} required/>
-            </div>
-            <br/>
-            <div>
-              <label htmlFor="address" class="form-label">Address</label>
-              <input type="text" id="address" className="form-control orderInput" name="address" placeholder="Enter Your Address" value={this.state.address} onChange={this.onChange} required/>
-            </div>
-            <br/>
-            <div>
-              <label htmlFor="postalCode" class="form-label">Postal Code</label>
-              <input type="text" id="postalCode" className="form-control orderInput" name="postalCode" placeholder="Enter Postal Code" value={this.state.postalCode} onChange={this.onChange} required/>
-            </div>
-            <br/>
-            <div>
-              <label htmlFor="country" class="form-label">Country</label>
-              <input type="text" id="country" className="form-control orderInput" name="country" placeholder="Enter Your Country" value={this.state.country} onChange={this.onChange} required/>
-            </div>
-            <br/>
-            <div>
-              <label />
-              <button className="btn btn-light nxtBtn" type="submit">
-                Next
-              </button>
-            </div>
-          </form>
+        <div className="orderPage">
+          <div className="shippingForm">
+            <form className="form shipBack" onSubmit={this.onSubmit}>
+              <div>
+                <h1 className="orderHead">Shipping Details</h1>
+              </div>
+              <br/>
+              <div>
+                <label htmlFor="name" class="form-label">Full Name</label>
+                <input type="text" id="name" className="form-control orderInput" name="name" placeholder="Enter Your Full Name" value={this.state.name} onChange={this.onChange} required/>
+              </div>
+              <br/>
+              <div>
+                <label htmlFor="address" class="form-label">Address</label>
+                <input type="text" id="address" className="form-control orderInput" name="address" placeholder="Enter Your Address" value={this.state.address} onChange={this.onChange} required/>
+              </div>
+              <br/>
+              <div>
+                <label htmlFor="postalCode" class="form-label">Postal Code</label>
+                <input type="text" id="postalCode" className="form-control orderInput" name="postalCode" placeholder="Enter Postal Code" value={this.state.postalCode} onChange={this.onChange} required/>
+              </div>
+              <br/>
+              <div>
+                <label htmlFor="country" class="form-label">Country</label>
+                <input type="text" id="country" className="form-control orderInput" name="country" placeholder="Enter Your Country" value={this.state.country} onChange={this.onChange} required/>
+              </div>
+              <br/>
+              <div>
+                <button className="btn btn-outline-light nxtBtn" type="submit">
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
         <Footer/>
       </div>

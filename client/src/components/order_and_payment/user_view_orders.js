@@ -13,7 +13,7 @@ class userViewOrders extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/order/viewCustOrd/john')
+    axios.get('http://localhost:5000/order/viewCustOrd/raven')
     .then(response => {
       this.setState({ orders: response.data.data })
     })
@@ -21,7 +21,7 @@ class userViewOrders extends Component {
 
   search() {
     var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
+    input = document.getElementById("orderSearch");
     filter = input.value.toUpperCase();
     table = document.getElementById("userOrder");
     tr = table.getElementsByTagName("tr");
@@ -41,26 +41,32 @@ class userViewOrders extends Component {
   render() {
     return (
       <div>
-        <UserNavigation/>
-        <div className="container">
-          <h1 id="ConfH">VIEW ORDER DETAILS</h1><br/>
-
-          <input type="text" id="myInput" onkeyup="search()" placeholder="Search for names.." title="Type in a name"/>
-          <table className="userOrderTable" id="userOrder">
+        <UserNavigation/><br/><br/>
+        <div >
+          <h1 id="ordH">VIEW ORDER DETAILS</h1><br/>
+          <div class="searchBox">
+            <input class="searchInput"type="search" id="orderSearch" onKeyUp={this.search} placeholder="Search by Order ID"/>
+            <button class="searchButton" >
+                <i class="material-icons">
+                    search
+                </i>
+            </button> 
+          </div>
+          <table className="table table-striped table-hover table-dark ordTable" id="userOrder">
             <thead>
               <tr>
                 <th>Order Id</th>
                 <th>Order Date</th>
                 <th>Total Charge</th>
                 <th>Payment Status</th>
-                <th>Delivery Status</th>\
+                <th>Delivery Status</th>
               </tr>
             </thead>
             <tbody>
               {this.state.orders.length > 0 && this.state.orders.map((item, index) => (
               <tr key={index}>
                 <td>{item.orderId}</td>
-                <td>{item.orderDate}</td>
+                <td>{dateformat(new Date(item.orderDate),"dddd-dS-mmm-yyyy")}</td>
                 <td>{item.totalCharge}</td>
                 <td>{item.paymentStatus}</td>
                 <td>{item.deliveryStatus}</td>

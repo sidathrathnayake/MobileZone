@@ -2,10 +2,14 @@ import React, { Component} from 'react'
 import CheckoutSteps from '../order_and_payment/checkout_steps';
 import UserNavigation from '../Navigation/User_Navigation';
 import Footer from '../Footer/Footer';
+import Select from 'react-select';
 
 const initialState = {
   payType: ''
 }
+const options = [
+  { value: 'PayPal', label: 'PayPal' },
+]
 class paymentType extends Component {
   constructor(props) {
     super(props);
@@ -28,29 +32,27 @@ class paymentType extends Component {
     return(
       <div>
         <UserNavigation/>
-        <br/><br/><br/><br/>
-        <CheckoutSteps step1 step2 step3></CheckoutSteps>
+       <div className="orderPage">
         <div className="shippingForm">
-          <form className="form shipBack" onSubmit={this.onSubmit}>
-            <div>
-              <h1 className="orderHead">Payment Method</h1>
-            </div>
-            <br/>
-            <div>
-              <label>Payment Type</label>
-              <select class="form-select orderInput" name="payType">
-                <option value="PayPal"> PayPal </option>
-              </select>
-            </div>
-            <br/>
-            <div>
-              <label />
-              <button className="nextBtn" type="submit">
-                Next
-              </button>
-            </div>
-          </form>
-        </div>
+            <form className="form shipBack" onSubmit={this.onSubmit}>
+              <div>
+                <h1 className="orderHead">Payment Method</h1>
+              </div>
+              <br/><br/>
+              <div class="form-group selectArea">
+                <label>Payment Type</label>
+                <Select label="Single select" className="orderSelect" options={options} />
+              </div>
+              <br/>
+              <div>
+                <label />
+                <button className="btn btn-outline-light nxtBtn" type="submit">
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+       </div>
         <Footer/>
       </div>
     );
