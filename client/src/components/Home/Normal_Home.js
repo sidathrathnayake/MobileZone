@@ -5,6 +5,7 @@ import NormalCover from '../CoverImage/Normal_Cover'
 
 class Normal_Home extends Component {
     render() {
+
         return (
             <div>
                 <NormalNavigation/>

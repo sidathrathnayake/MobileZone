@@ -1,0 +1,118 @@
+/*Category View-Admin Table Related CSS*/
+
+.admin-searchBar{
+  margin-top: 0%;
+  width: 70%;
+  margin-left: 40%;
+}
+.admin-table-body {
+  background-color:white;
+  height: 800px;
+}
+.bar {
+  border-color: rgb(190, 191, 196);
+  background-color: #f7f7f7;
+  box-shadow: none;
+  color:cornsilk;
+}
+.h2 {
+  font-size: 40px;
+  color: black;
+  margin-top: 5%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.edit-btn-category {
+  background-color: darkorange;
+  color: azure;
+}
+.delete-btn-category {
+  background-color: red;
+  color: azure;
+}
+/*Form related CSS*/
+.form-body-category {
+  background-color:  white;;  
+}
+.category-form-body {
+  -webkit-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
+    -moz-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
+    box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
+    border-radius: 15px;
+}
+
+.card-form {
+  width:60%;
+  margin-left: 20%;
+  border-radius: 15px;
+  
+}
+
+
+
+.control-form {
+  width: 280%;
+  margin-left: -90%;
+  box-shadow: none;
+}
+.label-category {
+  margin-left: 0%;
+  margin-left: -90%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+  color: black;
+  position: relative;
+}
+.control-form-description {
+  width: 260%;
+  margin-left: -80%;
+  
+}
+.category-file {
+  width: 100%;
+  margin-left: 0%;
+  max-width: 100%;
+}
+
+.label-category-image {
+  margin-left: -36%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+  color: black;
+}
+.btn-insert-category {
+  align-items: center;
+  width: 120%;
+  color: white;
+}
+
+.card-category-heading {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+/*Category Card*/
+.container-cat {
+  margin-top: 0%;
+  margin-right: 0%;
+}
+.inner-cat {
+  overflow: hidden;
+}
+.inner-cat img{
+  transition: all 1.5s ease;
+}
+.inner-cat:hover img{
+  transform: scale(1.5);
+}
+.card-cat {
+  margin-top: 4%;
+  margin-left: -15%;
+  padding: 5px;
+}
+.category-h4 {
+  font-size: 50px;
+  margin-top: 5%;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+

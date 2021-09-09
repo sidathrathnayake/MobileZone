@@ -1,0 +1,45 @@
+.page-body{
+    background-color: white;
+}
+.container{
+    /*background-color: #282c34;*/
+}
+/*.admin-table{*/
+/*    padding-top: 30px;*/
+/*    color: white;*/
+/*}*/
+
+#search-field{
+    max-width: 25%;
+    margin-left: 75%;
+    height: 30px;
+    border-radius: 10px;
+
+}
+
+.btnX{
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 0px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#button-update{
+    background-color: goldenrod;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#button-delete{
+    background-color: crimson;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

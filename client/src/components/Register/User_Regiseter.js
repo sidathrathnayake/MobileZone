@@ -115,11 +115,11 @@ class User_Register extends Component {
                         <div className="input-field">
                             <i className="fas fa-lock"></i>
                             <input
-                                    type="text" 
-                                    id="userName" 
-                                    value={this.state.userName} 
+                                    type="password" 
+                                    id="userPassword" 
+                                    value={this.state.userPassword} 
                                     onChange={this.handleInputChange}
-                                    name="userName" 
+                                    name="userPassword" 
                                     placeholder="Enter Password"
                                     required    
                                 >

@@ -34,7 +34,7 @@ componentDidMount(){
 
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
+        slides[slideIndex - 1].style.display = "block";
         setTimeout(showSlides, 5000); 
 
     }
@@ -82,7 +82,7 @@ componentDidMount(){
 
                     <div className="cover-slides">
                         <h2>Huawei
-                            <span><a href="/">MobileZone.com</a></span>
+                            <span><a href="/userhome">MobileZone.com</a></span>
                         </h2>
                         <img className="cover-image" src={insert4} alt="Logo" />
                         <div className="cover-details">
