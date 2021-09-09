@@ -19,6 +19,10 @@ import Admin_Reset_Password from './components/Reset_Password/Admin_Reset_Passwo
 import Normal_Cover from './components/CoverImage/Normal_Cover';
 import Normal_Home from './components/Home/Normal_Home';
 import Admin_Home from './components/Home/Admin_Home';
+import InsertItem from "./components/Item/InsertItem";
+import UserViewItem from "./components/Item/UserViewItem";
+import AdminItemView from "./components/Item/AdminItemView";
+import ItemByCategory from "./components/Item/ItemByCategory";
 
 const App = () => {
 
@@ -28,7 +32,7 @@ const App = () => {
       <div className="app">
         <Switch>
 
-            <Route exact path="/" component={Normal_Home}/>
+            <Route exact path="/" component={Normal_Cover}/>
             <Route exact path="/userlogin" component={User_Login}/>
             <Route exact path="/userregister" component={User_Register}/>
             <Route exact path="/adminhome" component={Admin_Home}/>
@@ -36,6 +40,11 @@ const App = () => {
 
 
             <Route exact path="/userdetails" component={Read_User}/>
+            /** Dhananajaya */
+            <Route exact path="/add-item" component={InsertItem}/>
+            <Route exact path="/user-get-item" component={UserViewItem}/>
+            <Route exact path="/user-get-item/:id" component={ItemByCategory}/>
+            <Route exact path="/admin-get-item" component={AdminItemView}/>
         </Switch>   
       </div>
     </Router>

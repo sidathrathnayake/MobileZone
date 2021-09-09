@@ -10,14 +10,21 @@ const ItemSchema = new mongoose.Schema({
         required:true
     },
     itemCategory:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'Categories'
+        type:String,
+        required:true
     },
-    description:{
+    itemDescription:{
         type:String,
         required:false
     },
+    imageName:{
+        type:String,
+        required:true
+    },
+    imageUrl:{
+        type:String,
+        required:true
+    }
 
 })
 
