@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
+
 
 const ConnectDB = async () => {
     await mongoose.connect(process.env.MONGODB_URI, {
         useNewUrlParser:true,
         useCreateIndex:true,
+        useUnifiedTopology:true,
         useFindAndModify:true,
-        useUnifiedTopology:true
+
     });
 
     console.log('MongoDB Connected');

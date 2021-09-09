@@ -24,7 +24,6 @@
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     max-width: 1400px;
-
 }
 .grid-item {
     background-color: #fff;
