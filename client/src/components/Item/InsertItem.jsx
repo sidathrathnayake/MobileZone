@@ -37,6 +37,7 @@ export default class InsertItem extends Component {
         this.isValid = this.isValid.bind(this);
     }
 
+    /** Get all categories*/
     componentDidMount() {
         axios.get('http://localhost:5000/get-category')
         .then(res =>{
