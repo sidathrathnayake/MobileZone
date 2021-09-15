@@ -92,7 +92,7 @@ export default class Category_ViewAdmin extends Component {
                                             </td>
                                             <td>
                                                 <div  style={{position:"relative"}}>
-                                                    <button type="button" class="btn edit-btn-category">
+                                                    <button type="button" class="btn edit-btn-category" onClick={e => this.navigateToUpdateCategoryPage(e, item.categoryName)}>
                                                         <i class="far fa-edit"></i> &nbsp;
                                                         Update
                                                     </button>
@@ -100,7 +100,7 @@ export default class Category_ViewAdmin extends Component {
                                             </td>
                                             <td>
                                                 <div  style={{position:"relative"}}>
-                                                    <button type="button" class="btn delete-btn-category">
+                                                    <button type="button" class="btn delete-btn-category" onClick={e => this.navigateToDeleteCategoryPage(e, item.categoryName)}>
                                                         <i class="far fa-trash-alt"></i> &nbsp;
                                                         Delete
                                                     </button>
