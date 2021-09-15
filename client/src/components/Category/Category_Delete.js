@@ -38,6 +38,7 @@ export default class Category_Update extends Component {
         })
     }
 
+    /**This method is to delete a category */
     navigateAfterDeleteCategory(e) {
         e.preventDefault();
         axios.delete(`http://localhost:5000/category/deleteOne/${this.props.match.params.categoryName}`)
@@ -55,6 +56,7 @@ export default class Category_Update extends Component {
           alert(error.message)
         })
     }
+
 
     render() {
         return (
