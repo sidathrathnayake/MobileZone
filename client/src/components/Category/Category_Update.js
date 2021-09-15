@@ -48,6 +48,7 @@ export default class Category_Update extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    /**This method denotes the update method to update a category */
     onSubmit(e) {
         e.preventDefault();
         this.state.errorStatus=true;
