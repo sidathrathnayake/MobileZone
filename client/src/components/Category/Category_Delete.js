@@ -61,11 +61,9 @@ export default class Category_Update extends Component {
             <div className="wrapper">
                 <Sidebar/> 
                     <div className="table-container"><br/>
-                    <h1>Delete Category</h1><br/><br/>
-                        <div class="card card-form">
-                            
+                        <h1>Delete Category</h1><br/><br/>
+                            <div class="card card-form">
                                 <div class="card-body category-form-body" style={{backgroundColor:"#fff"}}>
-                                    
                                         <form >
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label label-category">Category Name</label>
@@ -77,7 +75,7 @@ export default class Category_Update extends Component {
                                             </div>
                                             <div class="mb-4">
                                                 <label for="exampleInputEmail1" class="form-label label-category-image" style={{marginLeft:"0%"}}>Category Image</label>
-                                                <input class="form-control category-file" type="file" id="formFile" name="categoryImage"  readOnly/>
+                                                <input class="form-control category-file" type="file" id="formFile" name="categoryImage"   readOnly/>
                                             </div>
                                             <div className="mb-2">
                                                 <td><img src={`/uploads/${this.state.categoryImage}`} alt="..."style={{width:"10%"}} id="sImage" /></td>
@@ -85,7 +83,7 @@ export default class Category_Update extends Component {
                                             </div>
                                         </form>
                                 </div>
-                        </div>
+                            </div>
                     </div>
             </div>
         )
