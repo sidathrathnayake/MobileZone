@@ -68,4 +68,28 @@ router.get("/viewOne/:orderId", async(req,res) => {
     }
 })
 
+/**Updating Order */
+router.put("/update/:orderId", (req,res) => {
+    OrderPayment.findOneAndUpdate({"orderId":req.params.orderId},{"deliveryStatus":req.body.deliveryStatus})
+        .then(data => {
+            res.status(200).send({data:data});            
+        })
+        .catch((error) =>{ 
+            res.status(500).send({error:error.message});
+        });
+
+})
+
+/**Deleting Order */
+router.delete("/delete/:orderId", (req,res) => {
+    OrderPayment.findOneAndDelete({"orderId":req.params.orderId})
+        .then(data => {
+            res.status(200).send({data:data});            
+        })
+        .catch((error) =>{ 
+            res.status(500).send({error:error.message});
+        });
+
+})
+
 module.exports = router;
