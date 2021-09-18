@@ -24,7 +24,7 @@ export default class Admin_View_Orders extends Component {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("orderSearch");
         filter = input.value.toUpperCase();
-        table = document.getElementsByClassName("orderTable");
+        table = document.getElementById("orderTable");
         tr = table.getElementsByTagName("tr");
         for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
@@ -40,19 +40,19 @@ export default class Admin_View_Orders extends Component {
       }
     
     navigateToUpdateOrderPage(e, orderId) {
-        window.location = `/updateOrder/${orderId}`
+        window.location = `/adminUpdateOrder/${orderId}`
     }
     
     navigateToDeleteOrderPage(e, orderId) {
-      window.location = `/deleteOrder/${orderId}`
+      window.location = `/adminDeleteOrder/${orderId}`
     }
     
     render() {
         return (
             <div className="wrapper">
-                <Sidebar/>
+                {/* <Sidebar/> */}
                 <div>
-                    <h1><center>Order Details</center></h1><br/>
+                    <h1 style={{textDecoration:'none',marginLeft:'550px', marginTop:'30px'}}>Order Details</h1><br/>
                     <div class="searchBox adminOrderSearch">
                         <input class="searchInput" type="search" id="orderSearch" onKeyUp={this.search} placeholder="Search by Order ID"/>
                         <button class="searchButton" disabled>
@@ -61,7 +61,7 @@ export default class Admin_View_Orders extends Component {
                             </i>
                         </button> 
                     </div>
-                    <table className="orderTable">
+                    <table id="orderTable">
                         <thead>
                             <tr>
                                 <th>Order ID</th>    
@@ -109,14 +109,14 @@ export default class Admin_View_Orders extends Component {
                                     </td>
                                     <td>
                                         <div>
-                                            <button id="orderBtn">
+                                            <button id="orderBtn" onClick={e => this.navigateToUpdateOrderPage(e, item.orderId)}>
                                                 Update
                                             </button>
                                         </div>
                                     </td>
                                     <td>
                                         <div>
-                                            <button id="orderBtn">
+                                            <button id="orderBtn" onClick={e => this.navigateToDeleteOrderPage(e, item.orderId)}>
                                                 Delete
                                             </button>
                                         </div>

@@ -170,7 +170,7 @@
   height: 2px;
   margin-top: 0.2%;
 }
-.orderTable{
+#orderTable{
   width: 100%;
   margin-top: 5%;
   margin-left: 28%;
@@ -179,4 +179,60 @@
 .adminOrderSearch{
   margin-top: 1%;
   margin-left: 90%;
+}
+
+.orderUpdateCont{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 550px;
+  width: 700px;
+  height: fit-content;
+  margin-bottom: 10%;
+  margin-top: 30px;
+  background-color: #fff;
+  border-radius:15px;
+  -webkit-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
+    -moz-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
+    box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
+    
+}
+
+.updateOrdRow{
+  height: 40px;
+  width: 650px;
+}
+
+.updateLabel{
+  font-size: large;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.updateInput{
+  width: 400px;
+}
+
+.dark-btn{
+  background-color: #282939;
+  color: #fff;
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  margin-top: -10px;
+  font-size: large;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.heading{
+  text-decoration: none;
+  margin-left: 550px;
+  margin-top: 30px;
+}
+
+.deliverySelect{
+  width: 426px;
+  margin-top: 10px;
+  margin-left: 215px;
+  margin-bottom: 150px;
+  color: #000;
 }
