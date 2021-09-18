@@ -58,6 +58,9 @@ import Payment_Type from './components/order_and_payment/payment_type';
 import placeOrder from './components/order_and_payment/place_order';
 import orderSummary from './components/order_and_payment/order_summary';
 import userViewOrders from './components/order_and_payment/user_view_orders';
+import Admin_View_Orders from './components/order_and_payment/admin_view_orders';
+import admin_update_orders from './components/order_and_payment/admin_order_update';
+import admin_delete_orders from './components/order_and_payment/admin_order_delete';
 
 const App = () => {
 
@@ -107,7 +110,10 @@ const App = () => {
             <Route exact path="/placeOrder" component={placeOrder}/>
             <Route exact path="/orderSum" component={orderSummary}/>
             <Route exact path="/userViewOrd" component={userViewOrders}/>
-  
+            <Route exact path="/adminViewOrder" component={Admin_View_Orders}/>
+            <Route exact path="/adminUpdateOrder/:orderId" component={admin_update_orders}/>
+            <Route exact path="/adminDeleteOrder/:orderId" component={admin_delete_orders}/>
+
         </Switch>   
       </div>
     </Router>
