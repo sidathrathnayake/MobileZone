@@ -68,7 +68,7 @@ export default class admin_update_orders extends Component {
     render() {
         return (
             <div className="wrapper" style={{backgroundColor:'rgba(0,0,0,0.25)'}}>
-                {/* <Sidebar/>  */}
+                <Sidebar/> 
                     <div>
                         <h1 className="heading">Update Order</h1>
                             <div>

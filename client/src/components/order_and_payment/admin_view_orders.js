@@ -50,7 +50,7 @@ export default class Admin_View_Orders extends Component {
     render() {
         return (
             <div className="wrapper">
-                {/* <Sidebar/> */}
+                <Sidebar/>
                 <div>
                     <h1 style={{textDecoration:'none',marginLeft:'550px', marginTop:'30px'}}>Order Details</h1><br/>
                     <div class="searchBox adminOrderSearch">

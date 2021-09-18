@@ -55,7 +55,7 @@ export default class admin_delete_orders extends Component {
     render() {
         return (
             <div className="wrapper" style={{backgroundColor:'rgba(0,0,0,0.25)'}}>
-                {/* <Sidebar/>  */}
+                <Sidebar/> 
                 <div>
                     <h1 className="heading">Delete Order</h1>
                     <div>
