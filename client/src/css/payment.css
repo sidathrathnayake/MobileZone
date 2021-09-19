@@ -237,6 +237,10 @@
   color: #000;
 }
 
+.category-update-description {
+  width: 400px;
+}
+
 .reportSelect{
   width: 300px;
 }

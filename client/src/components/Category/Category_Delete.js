@@ -13,9 +13,9 @@ const initialState = {
     categoryName: '',
     categoryDescription: '',
     categoryImage: '',
-    file:null,
-    errors:{},
-    errorStatus:true
+    file: null,
+    errors: {},
+    errorStatus: true
 }
 
 export default class Category_Update extends Component {
@@ -27,66 +27,80 @@ export default class Category_Update extends Component {
     /**This method is to retreive the research paper amount */
     componentDidMount() {
         axios.get(`http://localhost:5000/category/retrieveOne/${this.props.match.params.categoryName}`)
-        .then(response => {
-          this.setState({ 
-            categoryName: response.data.categoryName,
-            categoryDescription: response.data.categoryDescription,
-            categoryImage: response.data.categoryImage})
-        })
-        .catch(error => {
-          alert(error.message)
-        })
+            .then(response => {
+                this.setState({
+                    categoryName: response.data.categoryName,
+                    categoryDescription: response.data.categoryDescription,
+                    categoryImage: response.data.categoryImage
+                })
+            })
+            .catch(error => {
+                alert(error.message)
+            })
     }
 
     /**This method is to delete a category */
     navigateAfterDeleteCategory(e) {
         e.preventDefault();
         axios.delete(`http://localhost:5000/category/deleteOne/${this.props.match.params.categoryName}`)
-        .then(response => {
-          if (response.status === 200){
-            window.location = '/view-category-admin'
-            alert("Category is Deleted!!!")
-          }
-          else{
-            window.location = '/view-category-admin'
-            alert("Failed to Delete Category!!!")
-          }
-        })
-        .catch(error => {
-          alert(error.message)
-        })
+            .then(response => {
+                if (response.status === 200) {
+                    window.location = '/view-category-admin'
+                    alert("Category is Deleted!!!")
+                }
+                else {
+                    window.location = '/view-category-admin'
+                    alert("Failed to Delete Category!!!")
+                }
+            })
+            .catch(error => {
+                alert(error.message)
+            })
     }
-
+    /**This method is to navigate to the update category page */
+    navigateToViewCategoryPage(e) {
+        window.location = '/view-category-admin'
+    }
 
     render() {
         return (
-            <div className="wrapper">
-                <Sidebar/> 
-                    <div className="table-container"><br/>
-                        <h1>Delete Category</h1><br/><br/>
-                            <div class="card card-form">
-                                <div class="card-body category-form-body" style={{backgroundColor:"#fff"}}>
-                                        <form >
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label label-category">Category Name</label>
-                                                <input type="text" class="form-control control-form" id="exampleInputEmail1" name="categoryName" value={this.state.categoryName} readOnly/>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label label-category" style={{marginLeft:"-80%"}}>Category Description</label>
-                                                <textarea class="form-control control-form-description" name="categoryDescription" value={this.state.categoryDescription}  rows="3" readOnly></textarea>
-                                            </div>
-                                            <div class="mb-4">
-                                                <label for="exampleInputEmail1" class="form-label label-category-image" style={{marginLeft:"0%"}}>Category Image</label>
-                                                <input class="form-control category-file" type="file" id="formFile" name="categoryImage"   readOnly/>
-                                            </div>
-                                            <div className="mb-2">
-                                                <td><img src={`/uploads/${this.state.categoryImage}`} alt="..."style={{width:"10%"}} id="sImage" /></td>
-                                                <button type="submit" class="btn btn-insert-category" onClick={e => this.navigateAfterDeleteCategory(e)}>Delete Category</button>
-                                            </div>
-                                        </form>
+            <div className="wrapper" style={{ backgroundColor: 'rgba(0,0,0,0.25)', height: "788px" }}>
+                <Sidebar />
+                <div>
+                    <h1 className="heading" style={{ marginTop: "10%" }}>Delete Category</h1>
+                    <div>
+                        <div className="orderUpdateCont">
+                            <form style={{ padding: '20px' }}>
+                                <div class="form-group row updateOrdRow">
+                                    <label for="form-control-orderId" class="col-4 form-label updateLabel">Category Name</label>
+                                    <div class="col-6">
+                                        <input type="text" className="form-control updateInput" id="form-control-orderId" name="categoryName" value={this.state.categoryName} readOnly />
+                                    </div>
+                                </div><br />
+                                <div class="form-group row updateOrdRow" style={{ height: "86px" }}>
+                                    <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Category Description</label>
+                                    <div class="col-6">
+                                        <textarea class="form-control category-update-description" name="categoryDescription" value={this.state.categoryDescription} rows="3" readOnly></textarea>
+                                    </div>
+                                </div><br /><br />
+                                {/* <div class="form-group row updateOrdRow">
+                                    <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Category Image</label>
+                                    <div class="col-6">
+                                        <input type="file" className="form-control updateInput" id="form-control-orderId" name="categoryImage" readOnly/>
+                                    </div>
+                                </div><br/><br/> */}
+                                <div className="row">
+                                    <div className="col">
+                                        <button type="button" onClick={e => this.navigateToViewCategoryPage(e)} class="dark-btn">Back</button>
+                                    </div>
+                                    <div className="col">
+                                        <button type="submit" class="dark-btn" onClick={e => this.navigateAfterDeleteCategory(e)}>Delete</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
+                        </div>
                     </div>
+                </div>
             </div>
         )
     }
