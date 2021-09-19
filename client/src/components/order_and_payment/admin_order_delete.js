@@ -17,7 +17,7 @@ export default class admin_delete_orders extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.state = initialState;
     }
-    /**This method is to retreive the research paper amount */
+    
     componentDidMount() {
         axios.get(`http://localhost:5000/order/viewOne/${this.props.match.params.orderId}`)
         .then(response => {

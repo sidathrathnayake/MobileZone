@@ -14,7 +14,7 @@ router.post("/add", async(req,res) => {
         orderId : 'ORD'+gen(),
         shippingId : req.body.shippingId,
         user : req.body.user,
-        orderDate : new Date(),
+        orderDate : new Date().toISOString(),
         totalItemValue : parseFloat(req.body.totalItemValue),
         shippingCharge : parseFloat(req.body.shippingCharge),
         taxCharge : parseFloat(req.body.taxCharge),
@@ -90,6 +90,45 @@ router.delete("/delete/:orderId", (req,res) => {
             res.status(500).send({error:error.message});
         });
 
+})
+
+/**Monthly Sales Amount*/
+router.get("/report/:month/:year",(req,res) =>{
+    var startDate = new Date(req.params.year+'-'+req.params.month+'-01');
+    var endDate = new Date(req.params.year+'-'+req.params.month+'-31');
+
+    OrderPayment.aggregate()
+    .match({
+        'orderDate':{$gte:startDate.toISOString(), $lte:endDate.toISOString()}
+    })
+    .group({
+        _id: { month: req.params.month, year: req.params.year},
+        totalAmount: {$sum: '$totalCharge'},
+        count: {$sum: 1}
+    })
+    .then(data => {
+        res.status(200).send({data:data});            
+    })
+    .catch((error) =>{ 
+        res.status(500).send({error:error.message});
+    });
+})
+
+/**Monthly Sales Order Details*/
+router.get("/report2/:month/:year",(req,res) =>{
+    var startDate = new Date(req.params.year+'-'+req.params.month+'-01');
+    var endDate = new Date(req.params.year+'-'+req.params.month+'-31');
+
+    OrderPayment.aggregate()
+    .match({
+        'orderDate':{$gte:startDate.toISOString(), $lte:endDate.toISOString()}
+    })
+    .then(data => {
+        res.status(200).send({data:data});            
+    })
+    .catch((error) =>{ 
+        res.status(500).send({error:error.message});
+    });
 })
 
 module.exports = router;

@@ -93,7 +93,7 @@ class orderSummary extends Component {
                   </div>
                 
                 <PayPalButton
-                  amount={localStorage.getItem("total_charge")}
+                  amount={localStorage.getItem("total_charge") / 199.61}
                   shippingPreference="NO_SHIPPING"
                   onSuccess={(details) => {
                     this.onPay(details);
