@@ -94,6 +94,7 @@ class User_Login extends Component {
         return (
             <div>
                 <NormalNavigation/>
+                <div className="userbody">
                 <div className="test-container">
                     <div className="insert-container">
                         <div className="forms-container">
@@ -193,6 +194,7 @@ class User_Login extends Component {
                         </div>
 
                     </div>
+                </div>
                 </div>
                 <Footer/>
             </div>

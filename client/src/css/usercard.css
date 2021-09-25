@@ -14,10 +14,6 @@
 
 }
 
-.usercard:hover{
-    background-color: #fff;
-
-}
 
 .usercard-details{
     padding:20px 10px;
@@ -30,10 +26,6 @@
     margin: 10px 0 15px 0;  
 }
 
-.usercard:hover .usercard-details>h3{
-    color: #000;
-}
-
 
 .usercard-details>p{
     color:#a0a0a0;
@@ -42,9 +34,6 @@
     line-height: 30px; 
 }
 
-.usercard:hover .usercard-details>p{
-    color: #555;
-}
 
 .usercard-image{
     width: 100%;
@@ -74,3 +63,10 @@
     background-color: yellow;
     color: #000;
 }
+
+.usercard-details .btn:hover{
+    margin-left: 45px;
+    background-color: orangered;
+    color: #fff;
+}
+

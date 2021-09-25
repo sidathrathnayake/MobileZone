@@ -38,16 +38,14 @@ class userViewOrders extends Component {
   render() {
     return (
       <div>
-        
-          <div class="searchBox">
-            <input class="searchInput"type="search" id="orderSearch" onKeyUp={this.search} placeholder="Search by Order ID"/>
-            <button class="searchButton" disabled>
-                <i class="material-icons">
-                    search
-                </i>
-            </button> 
+        <div className="reportbutton">
+        <div className="table-search">
+            <input className="form-control"type="search" id="orderSearch" onKeyUp={this.search} placeholder="Search by Order ID"/>
           </div>
-          <table className="table table-striped table-hover" id="userOrder">
+            
+          </div>
+          
+          <table id="userOrder">
             <thead>
               <tr>
                 <th class="bg-dark">Order Id</th>

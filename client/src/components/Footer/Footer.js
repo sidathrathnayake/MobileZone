@@ -18,7 +18,7 @@ class Footer extends Component {
                             <h3>Links</h3>
                             <ul>
                                 <li><a href="#"><i className="fas fa-blog"></i>&nbsp;Personal Blog</a></li>
-                                <li><a href="#"><i className="fab fa-github-square"></i>&nbsp;Github</a></li>
+                                <li><a href="#"><i className="fas fa-code-branch"></i>&nbsp;Github</a></li>
                                 <li><a href="#"><i className="fas fa-calendar-alt"></i>&nbsp;Events</a></li>
                                 <li><a href="#"><i className="fas fa-user-tie"></i>&nbsp;Career</a></li>
                                 <li><a href="#"><i className="fas fa-hands-helping"></i>&nbsp;Support</a></li>
@@ -43,9 +43,11 @@ class Footer extends Component {
                             </address>
                         </div>
                     </div>
+                   
                 </div>
+                
             </div>
-            <p className="footer-bottom-text"> All right reserved by &copy; SIR96.2021 </p>
+                <p className="footer-bottom-text"> All right reserved by &copy; SIR96.2021 </p>
             </footer>
         );
     }

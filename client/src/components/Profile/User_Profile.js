@@ -12,7 +12,7 @@ export default class User_Profile extends Component {
                 <div className="wrapper">
                     <UserCard/>
                     <div className="user-container">
-                    <h1 id="ordH">VIEW ORDER DETAILS</h1><br/>
+                    <h1>ORDER DETAILS</h1>
                         <UserOrders/>
                     </div>
                 </div>

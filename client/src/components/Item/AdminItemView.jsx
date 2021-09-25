@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import axios from "axios";
 import Sidebar from '../Navigation/Sidebar';
-import Footer from "../Footer/Footer";
 import '../../css/adminItemView.css';
+import TableScrollbar from 'react-table-scrollbar';
 
 export default class AdminItemView extends Component {
     constructor(props) {
@@ -45,40 +45,60 @@ export default class AdminItemView extends Component {
         return (
             <div className="wrapper">
             <Sidebar/>
-            <div className="table-container">
-                <h1>Products</h1><br/>
-                <div style={{display:"flex", alignItems:"center", justifyContent:"center",paddingLeft:"700px"}}>
-                    <input type="text" className="form-control" style={{width:"300px", height:"40px",float:"left"}} placeholder="Search" name="keyWord"
+            <div className="adminhome-container">
+          <div className="adminnav">
+            <h1>
+              <a href="/userdetails">
+                <i className="fa fa-mobile"></i>  Products
+              </a>
+            </h1>
+            
+          </div>
+          <div className="reportbutton">
+          <div className="table-search">
+          <input type="text" className="form-control" style={{width:"300px", height:"40px",float:"left"}} placeholder="Search" name="keyWord"
                     value={this.state.keyWord} onChange={this.onSearchHandler}/>
-                    <div style={{paddingLeft:"50px"}}>
+            </div>
+          <button className="btn" onClick={this.goPrint} id="right-panel-btn">
+              {" "}
+              Report
+            </button>
+            
+          </div>
+            <div className="table-container">
+                <div >
+                    
+                    <div >
                         <a href="/add-item" className="btn" style={{width:"150px",height:"40px"}}>Insert item</a>
                     </div>
                 </div>
-
-                    <table className="table table-hover" style={{borderRadius:"0"}}>
-                        <thead class="thead-dark"  id="table-header" style={{color:'#222'}}>
-                        <tr>
-                            <th scope="col" class="bg-dark">ID</th>
-                            <th scope="col" class="bg-dark">Item Name</th>
-                            <th scope="col" class="bg-dark">Item Price</th>
-                            <th scope="col" class="bg-dark">Category</th>
-                            <th scope="col" class="bg-dark"></th>
-                            <th scope="col" class="bg-dark"></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {this.state.products.length > 0 && this.state.products.map((item, index)=>(
-                            <tr key={index} scope="row">
-                                <th style={{color:"black"}}>{index+1}</th>
+                <TableScrollbar rows={9}>
+                <table>
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Item Price</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Update</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+              {this.state.products.length > 0 && this.state.products.map((item, index)=>(
+                  <tr key={index}>
+                    <td >{index+1}</td>
                                 <td>{item.itemName}</td>
                                 <td>Rs. {item.itemPrice}.00</td>
                                 <td>{item.itemCategory}</td>
-                                <td> <button className="btn btn-primary" id="button-update" onClick={this.btnOnClick}>Update</button> </td>
-                                <td> <button className="btn btndlt" id="button-delete" onClick={this.btnOnClick}>Delete</button> </td>
-                            </tr>
-                        ))}
-                        </tbody>
-                    </table>
+                    <td> <button className="btn btn-primary" id="button-update" onClick={this.btnOnClick}>Update</button> </td>
+                    <td> <button className="btn btndlt" id="button-delete" onClick={this.btnOnClick}>Delete</button> </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            </TableScrollbar>
+            </div>
             </div>
             </div>
         );

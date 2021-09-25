@@ -1,18 +1,14 @@
 table{
     position: relative;
-    left: 50%;
-    top:40%;
-    transform: translate(-50%,-50%);
-    width:95%;
-    max-height: 50vh;
+    width:100%;
+    max-height: 100px;
     border-collapse: collapse;
     border-spacing: 0;
     border-radius: 8px 8px 0 0;
-    overflow: hidden;
+    overflow: auto;
     box-shadow: 0 2px 12px rgba(32, 32, 32, .3);
     background: #fafafa;
     text-align: center;
-    scroll-behavior: auto;
 
 }
 
@@ -36,10 +32,8 @@ tr:nth-child(odd){
 
 
 .table-search{
-    margin-left: 30px;
-    top: 10%;
     display: block;
-    width: 40%;
+    width: 25%;
 }
 
 table .btndlt{
@@ -48,5 +42,6 @@ table .btndlt{
 }
 
 table .btndlt:hover{
-    background-color: yellow;
+    background-color: goldenrod;
+    color: white;
 }

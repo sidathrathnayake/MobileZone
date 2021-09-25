@@ -130,11 +130,19 @@ export default class InsertItem extends Component {
         return (
             <div className="wrapper">
                 <Sidebar/>
+                <div className="adminhome-container">
+                <div className="adminnav">
+            <h1>
+              <a href="#">
+                <i className="fa fa-mobile"></i> Insert Products
+              </a>
+            </h1>
+            
+          </div>
                 <div className="table-container">
-                    <h1>Insert Item </h1><br/>
                     <div >
                         <div>
-                           
+                           <br/><br/>
                             <form className='container-sm' style={{borderRadius:"15px",alignItems:"flex-start",maxWidth:"48%",padding:"5%"}}>
                                 <div className="mb-3">
                                     
@@ -182,6 +190,7 @@ export default class InsertItem extends Component {
                             </form>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         );

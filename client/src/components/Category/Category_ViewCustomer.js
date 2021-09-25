@@ -8,6 +8,7 @@ import NormalNavigation from '../Navigation/Normal_Navigation';
 import Footer from '../Footer/Footer';
 /**Importing the axios package */
 import axios from 'axios';
+import background from "../../image/background.png";
 
 /**Class component starts here */
 export default class Category_ViewCustomer extends Component {
@@ -33,9 +34,9 @@ export default class Category_ViewCustomer extends Component {
     }
     render() {
         return (
-            <div>
+            <div >
                 <NormalNavigation/><br></br><br></br>
-                <div className="container-fluid">
+                <div className="container-fluid" >
                     <h4 className="category-h4" style={{color:"black"}}>Shop By Category</h4>
                         <div className="container container-cat">
                             <div className="row justify-content-right card-cat">

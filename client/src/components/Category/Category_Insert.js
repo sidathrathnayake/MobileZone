@@ -68,8 +68,16 @@ export default class Category_Insert extends Component {
         return (
             <div className="wrapper">
                 <Sidebar/> 
-                    <div className="table-container"><br/>
-                    <h1>Insert Category</h1><br/><br/>
+                <div className="adminhome-container">
+                <div className="adminnav">
+            <h1>
+              <a href="/userdetails">
+                <i className="fa fa-clipboard-list"></i> Insert Category
+              </a>
+            </h1>
+            
+          </div>
+                    <div className="table-container"><br/><br/><br/>
                         <div class="card card-form">
                             
                                 <div class="card-body category-form-body" style={{backgroundColor:"#fff"}}>
@@ -93,6 +101,7 @@ export default class Category_Insert extends Component {
                                         </form>
                                 </div>
                         </div>
+                    </div>
                     </div>
             </div>
         )

@@ -12,6 +12,7 @@ import './css/sidebar.css';
 import './css/admincard.css';
 import './css/usercard.css';
 import './css/payment.css';
+import './css/pdfpage.css';
 
 import Read_User from './components/Read/Read_User';
 import Admin_Login from './components/Login/Admin_Login';
@@ -23,6 +24,8 @@ import User_Home from './components/Home/User_Home';
 import User_Reset_Password from './components/Reset_Password/User_Reset_Password';
 import Admin_Reset_Password from './components/Reset_Password/Admin_Reset_Password';
 import User_Profile from './components/Profile/User_Profile';
+import User_Update from './components/Profile/User_Update';
+import User_PDF from './components/Read/User_PDF';
 
 /**Viraj Imports */
 /**Importing the Category_Insert component */
@@ -74,7 +77,9 @@ const App = () => {
             <Route exact path="/adminhome" component={Admin_Home}/>
             <Route exact path="/userhome" component={User_Home}/>
             <Route exact path="/userprofile" component={User_Profile}/>
+            <Route exact path="/updateuser/:id" component={User_Update}/>
             <Route exact path="/userdetails" component={Read_User}/>
+            <Route exact path="/userspdf" component={User_PDF}/>
             <Route exact path="/userresetpassword/:resetToken" component={User_Reset_Password}/>
             <Route exact path="/adminresetpassword/:resetToken" component={Admin_Reset_Password}/>
         

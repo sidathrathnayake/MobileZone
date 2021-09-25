@@ -1,13 +1,13 @@
 .table-container{
     padding: 1%;
-    margin-left: 300px;
     width: 100%;
+    
 }
 
 .user-container{
     padding: 1%;
     margin-top: 5%;
-    margin-left: 300px;
+    width: 100%;
 }
 
 .form-container{
@@ -23,16 +23,15 @@
     width: 100%;
     padding-top: 10%;
     padding-bottom: 4%;
-    background: white;
 }
 
 .insert-container{
     position: relative;
-    width: 80%;
-    min-height: 100vh;
+    width: 60%;
+    min-height: 80vh;
     background-color: #fff;
     overflow: hidden;
-    margin-left: 10%;
+    margin-left: 20%;
     margin-top: 0px;
 }
 
@@ -93,6 +92,6 @@
     place-items: center center;
     font-family: 'Poppins', sans-serif;
     margin-left: 300px;
-    margin-top: 10%;
+    width: 100%;
 }
 

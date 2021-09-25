@@ -103,13 +103,17 @@
 }
 #userOrder{
   
-  transform: translate(-50%,-50%);
-  width: 150%;
-  margin-top: 15%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  -webkit-box-shadow: 0px 2px 62px 8px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 2px 62px 8px rgba(0,0,0,0.25);
-    box-shadow: 0px 2px 62px 8px rgba(0,0,0,0.25);
+  position: relative;
+  width:100%;
+  max-height: 60vh;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 8px 8px 0 0;
+  overflow: scroll;
+  box-shadow: 0 2px 12px rgba(32, 32, 32, .3);
+  background: #fafafa;
+  text-align: center;
+  scroll-behavior: auto;
 }
 #userOrder td{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

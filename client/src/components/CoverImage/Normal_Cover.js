@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import background from "../../image/background.png";
 import insert1 from '../../image/allcover.png';
 import insert2 from '../../image/applecover.png';
 import insert3 from '../../image/samsungcover.png';
@@ -39,14 +40,15 @@ componentDidMount(){
         slides[slideIndex-1].style.display = "block";
         setTimeout(showSlides, 5000); 
 
+        
     }
-
 }   
-    
+
+
     render() {
         return (
-            <div>
-                <div className="coverslide-container">
+            <div >
+                <div className="coverslide-container" >
 
                     <div className="cover-slides">
                         <h2>Mobiles
@@ -58,7 +60,7 @@ componentDidMount(){
                         </div>
                     </div>
 
-                    <div className="cover-slides">
+                    <div className="cover-slides" >
                         <h2>Apple
                             <span><a href="/">MobileZone.com</a></span>
                         </h2>

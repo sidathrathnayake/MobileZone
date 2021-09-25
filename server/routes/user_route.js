@@ -150,21 +150,49 @@ router.get('/user/users', (req,res,next) => {
     });
 });
 
-//Retrive specific data
+//Retrive
+router.get('/user/newusers', (req,res,next) => {
+    userModel.find().exec((err, users) => {
+        if(err){
+            return next(new Error('No new users!', 400));
+        }
+        return res.status(200).json({
+            success:true,
+            users
+        });
+    });
+});
+
+// Retrive specific data by email
+
 router.get('/user/userdata/:userEmail',(req,res) =>{
     
     let userEmail = req.params.userEmail;
     userModel.findOne({"userEmail":userEmail} ,(err, user ) => {
         if(err){
-            return next(new ErrorResponse("Can not find a user with this email...!",400));
+            return next(new Error("Can not find a user with this email...!",400));
         }
         return res.status(200).json({
             success:true,
             user
         });
-    });
-});
+    })
+})
 
+
+// Retrive specific data by id
+router.get('/user/userdatas/:id',(req,res) =>{
+    const userid = req.params.id;
+    userModel.findById(userid,(err, user) => {
+        if(err){
+            return next(new Error("Can not find a user with this id...!",400));
+        }
+        return res.status(200).json({
+            success:true,
+            user
+        });
+    })
+})
 
 //Update
 router.put('/user/updateuser/:id', (req, res, next) => {
@@ -174,7 +202,7 @@ router.put('/user/updateuser/:id', (req, res, next) => {
     },
     (err, user) => {
         if(err){
-            return next(new userModel('Can not update the data!', 400));
+            return next(new Error('Can not update the data!', 400));
         }
         
         return res.status(200).json({
