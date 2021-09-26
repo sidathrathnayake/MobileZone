@@ -10,10 +10,11 @@ const multer = require("multer");
 // E:\GitHUB\Github-Projects\MobileZone\client\public\uploads\galaxy_s21_5g_highlights_box.0.jpg
 // ../../client/public/uploads/
 
+
 /**Initializing disk storage */
 const storage = multer.diskStorage({
     destination : (req,file, callback) => {
-        callback(null, "C:/Users/msi gf63/Desktop/MobileZone/client/public/uploads/");
+        callback(null, "E:/GitHUB/MobileZone-master/client/public/uploads/");
     },
     filename : (req,file, callback) => {
         callback(null, file.originalname);
@@ -35,7 +36,7 @@ const upload = multer({
       fileSize: 1024 * 1024 * 5
     },
     fileFilter: fileFilter
-  });
+});
 
 /**Insertion method for inserting a category */
 router.post("/insert", upload.single("categoryImage"), (req,res) => {
@@ -110,9 +111,10 @@ router.route("/delete/:id").delete(async (req,res) => {
 })
 /**Deleting method for deleting a category using the Category Name*/
 router.route("/deleteOne/:categoryName").delete(async (req,res) => {
+    //const path1  = req.params.path+"/"+req.params.file;
     let categoryName = req.params.categoryName;
-
-    await Category.findOneAndDelete({"categoryName":categoryName}).then(()=>{
+    await Category.findOneAndDelete({"categoryName":categoryName})
+    .then(()=>{
         res.json("Category Deleted");
     }).catch((err)=>{
         console.log(err);
