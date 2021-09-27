@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: [true , 'Password field can not be empty!']
     },
+    userDate:{
+        type:Date,
+        required: [true , 'Date field can not be empty!']
+    },
     resetPasswordToken: String,
     resetPasswordExpire: Date 
 });

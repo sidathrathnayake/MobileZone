@@ -51,7 +51,7 @@ pdfGenerate = () =>{
         styles: {overflow: 'linebreak'},
         html: '#new_user_table',
     })
-    doc.save('a.pdf'+ 1);
+    doc.save('Customers who registered last week.pdf');
 
     this.props.history.push("/userdetails");
 }
@@ -69,7 +69,7 @@ pdfGenerate = () =>{
                 <div className="adminnav">
             <h1>
               <a href="/userdetails">
-                <i className="fa fa-users-cog"></i> New Customers
+                <i className="fa fa-users-cog"></i> Customers who registered last week
               </a>
             </h1>
             
@@ -85,6 +85,7 @@ pdfGenerate = () =>{
                     <table id="new_user_table">
                         <thead>
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">name</th>
                                 <th scope="col">email</th>
@@ -95,6 +96,7 @@ pdfGenerate = () =>{
                             {this.state.users.map((users,index) => (
                             <tr key={index}>
                                 <td>{index+1}</td>
+                                <td>{users._id}</td>
                                 <td>{users.userName}</td>
                                 <td>{users.userEmail}</td>
                                 

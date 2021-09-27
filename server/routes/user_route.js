@@ -6,7 +6,7 @@ const Error = require('../utils/error_response');
 const sendEmail = require('../utils/send_email');
 const  { getPrivateData }  = require('../middleware/private_error');
 const { protect }  =  require('../middleware/user_protect');
-
+const moment = require('moment');
 //Protecion
 router.get('/user', protect,getPrivateData);
 
@@ -150,9 +150,22 @@ router.get('/user/users', (req,res,next) => {
     });
 });
 
-//Retrive
+//Retrive past week users
 router.get('/user/newusers', (req,res,next) => {
-    userModel.find().exec((err, users) => {
+  
+    let today,weekago;
+
+    today = moment().format("YYYY-MM-DD");
+    weekago = moment().subtract(7,'d').format('YYYY-MM-DD');
+
+  
+    userModel.find({
+        "userDate": {
+          $gte: weekago,
+          $lte: today
+        }
+      },(err, users) => {
+
         if(err){
             return next(new Error('No new users!', 400));
         }

@@ -95,6 +95,7 @@ class Read_User extends Component {
                   <th scope="col">#</th>
                   <th scope="col">name</th>
                   <th scope="col">email</th>
+                  <th scope="col">registered date</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -104,6 +105,7 @@ class Read_User extends Component {
                     <td>{index + 1}</td>
                     <td>{users.userName}</td>
                     <td>{users.userEmail}</td>
+                    <td>{users.userDate}</td>
                     <td>
                       <a
                         className="btn btndlt"

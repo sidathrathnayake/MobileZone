@@ -3,15 +3,19 @@ import axios from 'axios';
 import insert1 from '../../image/register.svg';
 import NormalNavigation from '../Navigation/Normal_Navigation';
 import Footer from '../Footer/Footer';
+import moment from 'moment'
 
 class User_Register extends Component {
 
     constructor(props){
         super(props);
-    
+        var today = new Date(),
+        date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        
         this.state = {
             userName:"",
             userEmail:"",
+            userDate:moment().format("YYYY-MM-DD"),
             userPassword:"",
             userConfirmPassword:"",
     
@@ -31,7 +35,7 @@ class User_Register extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         
-        const {userName, userEmail,userPassword,userConfirmPassword }= this.state;
+        const {userName, userEmail,userDate,userPassword,userConfirmPassword }= this.state;
         if(this.state.userPassword.length < 6 ){
             setTimeout((err)=>{
                 return alert("Password must contain atleast 6 characters"); 
@@ -49,6 +53,7 @@ class User_Register extends Component {
         const data = {
             userName: userName, 
             userEmail: userEmail,
+            userDate:userDate,
             userPassword: userPassword
         }
         axios.post('http://localhost:5000/user/userregister', data).then((res) =>{
@@ -57,6 +62,7 @@ class User_Register extends Component {
                     {   
                         userName:"",
                         userEmail:"",
+                        userDate:"",
                         userPassword:""
                     }
                 )
@@ -139,7 +145,6 @@ class User_Register extends Component {
                                 required>
                             </input>
                         </div>
-
                         <div>
                             <button type="submit" onClick={this.onSubmit} 
                             className="btn btn-primary" tabIndex={3}>Register</button>
