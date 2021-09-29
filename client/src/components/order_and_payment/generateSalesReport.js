@@ -3,23 +3,76 @@ import Sidebar from '../Navigation/Sidebar';
 import '../../css/payment.css'
 import axios from 'axios';
 import Select from 'react-select';
+import { PDFDownloadLink,Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+import dateformat from 'dateformat';
 
-/**Defining the initial state research paper amount */
+const styles = StyleSheet.create({
+    page: {
+        flexDirection: 'row',
+        backgroundColor: '#FFFFFF',
+        width: '21cm',
+        height: '29.7cm',
+    },
+    section: {
+        height: '29.7cm',
+        width: '6.5cm',
+        backgroundColor: '#5f4591',
+        paddingBottom: '25px',
+        paddingTop: '25px',
+    },
+    section2: {
+        height: '29.7cm',
+        width: '15cm',
+        marginLeft: '25px',
+        marginRight: '35px',
+        marginBottom: '25px',
+        marginTop: '25px',
+    },
+    head1:{
+        fontSize:25,
+        color:'white',
+        marginLeft:-150,
+        fontWeight:'extrabold'
+    },
+    head2:{
+        fontSize:15,
+        color:'white',
+        marginLeft:-150,
+        fontWeight:'extrabold'
+    },
+    textHead: {
+        fontSize: '8px',
+        textAlign: 'center'
+    },
+    salesH:{
+        fontWeight:'demibold',
+        marginBottom:30,
+        textTransform:'uppercase',
+    },
+    dHead:{
+        fontSize:14,
+    },
+    dValue:{
+        fontSize:12,
+    }
+});
+
 const initialState = {
-    month:[{value:'June',label:'June'},
-                    {value:'July',label:'July'},
-                    {value:'August',label:'August'},
-                    {value:'September',label:'September'}],
+    month:[{value:'August',label:'August'},{value:'September',label:'September'},{value:'October',label:'October'}],
     year:[{value:'2021',label:'2021'}],
     selectedMonth:'',
-    selectedYear:''               
+    selectedYear:'',
+    salesAmount:0,      
+    orders: [],
+    linkView:false,      
 }
 
 export default class admin_generate_sales_report extends Component {
-    /**Constructor for getting the records */
     constructor(props) {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
+        this.onMonthChange = this.onMonthChange.bind(this);
+        this.onYearChange = this.onYearChange.bind(this);
         this.state = initialState;
     }
 
@@ -28,16 +81,73 @@ export default class admin_generate_sales_report extends Component {
     }
     onYearChange(e) {
         this.setState({ selectedYear: e.value });
-    }
+    }   
     
+    MyDocument = () => (
+        <Document>
+            <Page size="A4" style={styles.page}>
+                <View style={styles.section}>
+                    <View style={{transform:'rotate(270deg)'}}>
+                        <Text style={styles.head1}>
+                            MOBILEZONE
+                        </Text>
+                        <Text style={styles.head2}>
+                            BY CODE REBELS
+                        </Text>
+                    </View>
+                </View>
+                <View style={styles.section2}>
+                    <Text style={styles.salesH}>
+                        {this.state.selectedMonth} SALES REPORT
+                    </Text>
+                    <View>
+                        {this.state.orders.length > 0 && this.state.orders.map((item, index) => (
+                        <View style={{marginBottom:20}}>
+                            <Text style={styles.dValue}>
+                                Order ID: {item.orderId}
+                            </Text>
+                            <Text style={styles.dValue}>
+                                User: {item.user}
+                            </Text>
+                            <Text style={styles.dValue}>
+                                Order Date: {dateformat(new Date(item.orderDate),"dd-mmm-yyyy")}
+                            </Text>
+                            <Text style={styles.dValue}>
+                                Order Total: Rs.{item.totalCharge}
+                            </Text>
+                            <Text style={styles.dValue}>
+                                Payment Status: {item.paymentStatus}
+                            </Text>
+                            <Text style={styles.dValue}>
+                                Delivery Status: {item.deliveryStatus}
+                            </Text>
+                        </View>
+                        ))} 
+                    </View>
+                    <Text style={{fontSize:15}}>
+                        Total Sales: Rs.{this.state.salesAmount}
+                    </Text>
+                </View>
+            </Page>
+        </Document>
+    );
 
     onSubmit(e) {
         e.preventDefault();
         
-        axios.delete(`http://localhost:5000/order/delete/${this.props.match.params.orderId}`)
+        axios.get(`http://localhost:5000/order/report/${this.state.selectedMonth}/${this.state.selectedYear}`)
         .then(response => {
-            window.location = '/adminViewOrder'
-            alert('Data successfully Deleted!!!')
+            this.setState({salesAmount:response.data.data[0].totalAmount})
+            axios.get(`http://localhost:5000/order/reportOrderDetails/${this.state.selectedMonth}/${this.state.selectedYear}`)
+            .then(response2 => {
+                this.setState({ orders: response2.data.data })
+                alert('Report successfully Generated!')
+                this.setState({ linkView: true })
+            })
+            .catch(error => {
+                console.log(error.message);
+                alert(error.message)
+            })
         })
         .catch(error => {
             console.log(error.message);
@@ -69,6 +179,14 @@ export default class admin_generate_sales_report extends Component {
                                 </div><br/><br/><br/><br/><br/><br/>
                                 
                                 <button type="submit" class="dark-btn">Generate Report</button>
+                                <br/>
+                                {this.state.linkView == true &&
+                                    <PDFDownloadLink document={<this.MyDocument />} fileName='Sales_Report.pdf'>
+                                    {({ blob, url, loading, error }) =>
+                                        loading ? 'Loading document...' : 'Download!'
+                                    }
+                                    </PDFDownloadLink>
+                                }
                             </form>
                         </div>
                     </div>

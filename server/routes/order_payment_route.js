@@ -115,7 +115,7 @@ router.get("/report/:month/:year",(req,res) =>{
 })
 
 /**Monthly Sales Order Details*/
-router.get("/report2/:month/:year",(req,res) =>{
+router.get("/reportOrderDetails/:month/:year",(req,res) =>{
     var startDate = new Date(req.params.year+'-'+req.params.month+'-01');
     var endDate = new Date(req.params.year+'-'+req.params.month+'-31');
 
