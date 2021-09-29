@@ -65,7 +65,7 @@ class Read_User extends Component {
           <div className="adminnav">
             <h1>
               <a href="/userdetails">
-                <i className="fa fa-users-cog"></i> Customers
+                <i className="fa fa-users-cog"></i> &nbsp;&nbsp;Customers
               </a>
             </h1>
             

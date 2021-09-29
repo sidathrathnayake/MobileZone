@@ -73,7 +73,7 @@ export default class AdminItemView extends Component {
           <div className="adminnav">
             <h1>
               <a href="/userdetails">
-                <i className="fa fa-mobile"></i>  Products
+                <i className="fa fa-mobile"></i>  &nbsp;&nbsp;Products
               </a>
             </h1>
             

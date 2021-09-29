@@ -73,7 +73,7 @@ export default class Category_Insert extends Component {
                 <div className="adminnav">
             <h1>
               <a href="#">
-                <i className="fa fa-clipboard-list"></i> Insert Category
+                <i className="fa fa-clipboard-list"></i> &nbsp;&nbsp;Insert Category
               </a>
             </h1>
             

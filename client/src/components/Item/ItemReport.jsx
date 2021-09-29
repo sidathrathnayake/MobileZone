@@ -84,7 +84,7 @@ console.log(this.state.startDate)
                 <div className="adminnav">
             <h1>
               <a href="#">
-                <i className="fa fa-mobile"></i> Weekly Product Report
+                <i className="fa fa-mobile"></i> &nbsp;&nbsp;Weekly Product Report
               </a>
             </h1>
             

@@ -60,7 +60,7 @@ export default class Category_ViewAdmin extends Component {
           <div className="adminnav">
             <h1>
               <a href="/userdetails">
-                <i className="fa fa-clipboard-list"></i> Categories
+                <i className="fa fa-clipboard-list"></i> &nbsp;&nbsp;Categories
               </a>
             </h1>
           </div>

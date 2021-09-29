@@ -69,7 +69,7 @@ pdfGenerate = () =>{
                 <div className="adminnav">
             <h1>
               <a href="/userdetails">
-                <i className="fa fa-users-cog"></i> Customers who registered last week
+                <i className="fa fa-users-cog"></i> &nbsp;&nbsp;Customers who registered last week
               </a>
             </h1>
             

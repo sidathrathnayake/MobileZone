@@ -134,7 +134,7 @@ export default class InsertItem extends Component {
                 <div className="adminnav">
             <h1>
               <a href="#">
-                <i className="fa fa-mobile"></i> Insert Products
+                <i className="fa fa-mobile"></i> &nbsp;&nbsp;Insert Products
               </a>
             </h1>
             

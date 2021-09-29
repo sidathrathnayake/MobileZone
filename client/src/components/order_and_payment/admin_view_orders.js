@@ -92,7 +92,10 @@ export default class Admin_View_Orders extends Component {
         this.props.history.push("/adminViewOrder");
     }
 
-    
+    goSalesReport = () => {
+        this.props.history.push("/generateSalesReport");
+      };
+
     render() {
         return (
             <div className="wrapper">
@@ -101,7 +104,7 @@ export default class Admin_View_Orders extends Component {
           <div className="adminnav">
             <h1>
               <a href="/userdetails">
-                <i className="fa fa-coins"></i> Orders
+                <i className="fa fa-coins"></i> &nbsp;&nbsp;Orders
               </a>
             </h1>
             
@@ -114,9 +117,9 @@ export default class Admin_View_Orders extends Component {
               {" "}
               Customer Orders
             </button>
-            <button style={{height:'60px'}} className="btn" onClick={this.goPrint} id="right-panel-btn">
+            <button style={{height:'60px'}} className="btn" onClick={this.goSalesReport} id="right-panel-btn">
               {" "}
-              Mata sure na
+              Sales Report
             </button>
             
           </div>

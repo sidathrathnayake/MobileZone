@@ -149,7 +149,7 @@ export default class UpdateItem extends Component {
                 <div className="adminnav">
             <h1>
               <a href="#">
-                <i className="fa fa-mobile"></i> Update Product
+                <i className="fa fa-mobile"></i> &nbsp;&nbsp;Update Product
               </a>
             </h1>
             

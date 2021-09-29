@@ -60,7 +60,7 @@ export default class admin_delete_orders extends Component {
           <div className="adminnav">
             <h1>
               <a href="#">
-                <i className="fa fa-coins"></i> Delete Orders
+                <i className="fa fa-coins"></i> &nbsp;&nbsp;Delete Orders
               </a>
             </h1>
             

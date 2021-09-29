@@ -70,7 +70,7 @@ export default class Category_Update extends Component {
                 <div className="adminnav">
             <h1>
               <a href="#">
-                <i className="fa fa-clipboard-list"></i> Delete Category
+                <i className="fa fa-clipboard-list"></i> &nbsp;&nbsp;Delete Category
               </a>
             </h1>
             

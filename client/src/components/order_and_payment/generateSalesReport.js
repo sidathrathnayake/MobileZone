@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     section: {
         height: '29.7cm',
         width: '6.5cm',
-        backgroundColor: '#5f4591',
+        backgroundColor: '#000',
         paddingBottom: '25px',
         paddingTop: '25px',
     },
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     head2:{
         fontSize:15,
-        color:'white',
+        color:'goldenrod',
         marginLeft:-150,
         fontWeight:'extrabold'
     },
@@ -158,14 +158,21 @@ export default class admin_generate_sales_report extends Component {
 
     render() {
         return (
-            <div className="wrapper" style={{backgroundColor:'rgba(0,0,0,0.25)',height:'753px'}}>
+            <div className="wrapper" >
                 <Sidebar/> 
-                <div>
-                    <h1 className="heading">Generate Monthly Sales Report</h1>
+                <div className="adminhome-container" style={{backgroundColor:'rgba(0,0,0,0.25)'}}>
+          <div className="adminnav">
+            <h1>
+              <a href="#">
+                <i className="fa fa-coins"></i> &nbsp;&nbsp;Sales Report
+              </a>
+            </h1>
+            
+          </div>
                     <div>
-                        <div className="orderUpdateCont">
-                            <form style={{padding:'20px'}} onSubmit={this.onSubmit}>
-                                <div class="form-group row updateOrdRow" style={{width:'500px',marginTop:'30px'}}>
+                        <div className="orderUpdateCont" style={{ marginTop: "30%",marginBottom: "30%"  }}>
+                            <form style={{padding:'20px', overflow: "visible"}} onSubmit={this.onSubmit}  >
+                                <div class="form-group row updateOrdRow" style={{width:'500px',marginTop:'30px', marginBottom: "5px" }}>
                                     <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Sales Year</label>
                                     <div class="col-6">
                                     <Select options={this.state.year} placeholder='Select the Year' onChange={this.onYearChange} className="basic-single reportSelect" />

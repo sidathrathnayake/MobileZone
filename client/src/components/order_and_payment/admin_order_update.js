@@ -73,7 +73,7 @@ export default class admin_update_orders extends Component {
           <div className="adminnav">
             <h1>
               <a href="#">
-                <i className="fa fa-coins"></i> Update Orders
+                <i className="fa fa-coins"></i> &nbsp;&nbsp;Update Orders
               </a>
             </h1>
             
