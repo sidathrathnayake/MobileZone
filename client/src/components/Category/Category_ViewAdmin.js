@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 /**Importing the axios package */
 import axios from "axios";
 
-import TableScrollbar from 'react-table-scrollbar';
+import TableScrollbar from "react-table-scrollbar";
 
 /**Class component starts here */
 export default class Category_ViewAdmin extends Component {
@@ -65,92 +65,92 @@ export default class Category_ViewAdmin extends Component {
             </h1>
           </div>
           <div className="reportbutton">
-            <form class="d-flex admin-searchBar">
-              <input
-                class="form-control bg-none bar"
-                type="search"
-                onKeyUp={this.myFunction}
-                id="searchBar"
-                placeholder="Search by Category Name"
-                aria-label="Search"
-              />
-            </form>
-            <button className="btn" id="right-panel-btn">
-              {" "}
-              Report
-            </button>
+          <form class="d-flex admin-searchBar" style={{marginRight:"-50px"}}>
+                                <input class="form-control bg-none bar" type="search" onKeyUp={this.myFunction} id="searchBar" placeholder="Search by Category Name" aria-label="Search"/>
+                            </form>
+                            <a href='/create-category' class="btn" style={{width:"200px", height:"40px",float:"right"}}>Add Category</a>
           </div>
           <div className="table-container">
-            <div style={{ display: "flex" }}>
-              <a
-                href="/create-category"
-                class="btn"
-                style={{ width: "200px", height: "40px", float: "right" }}
-              >
-                Add Category
-              </a>
-            </div>
+           
             <TableScrollbar rows={10}>
-            <table class="table table-hover" id="myTable">
-              <thead style={{ color: "blue" }}>
-                <tr class="bg-primary">
-                  <th scope="col" class="bg-dark">
-                    Category Name
-                  </th>
-                  <th scope="col" class="bg-dark">
-                    Category Description
-                  </th>
-                  <th scope="col" class="bg-dark">
-                    Image
-                  </th>
-                  <th scope="col" class="bg-dark">
-                    Category Update
-                  </th>
-                  <th scope="col" class="bg-dark">
-                    Category Delete
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.category.length > 0 &&
-                  this.state.category.map((item, index) => (
-                    <tr>
-                      <td>
-                        <div style={{ position: "relative", top: "30px" }}>
-                          {item.categoryName}
-                        </div>
-                      </td>
-                      <td>
-                        <div style={{ position: "relative", top: "30px" }}>
-                          {item.categoryDescription}
-                        </div>
-                      </td>
-                      <td width="10%">
-                        <img
-                          src={`/uploads/${item.categoryImage}`}
-                          alt="..."
-                          style={{ width: "90%", borderRadius: "15%" }}
-                          id="sImage"
-                        />
-                      </td>
-                      <td>
-                        <div style={{ position: "relative" }}>
-                          <button type="button" class="btn edit-btn-category">
-                            <i class="far fa-edit"></i> &nbsp; Update
-                          </button>
-                        </div>
-                      </td>
-                      <td>
-                        <div style={{ position: "relative" }}>
-                          <button type="button" class="btn delete-btn-category">
-                            <i class="far fa-trash-alt"></i> &nbsp; Delete
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
+              <table class="table table-hover" id="myTable">
+                <thead style={{ color: "blue" }}>
+                  <tr class="bg-primary">
+                    <th scope="col" class="bg-dark">
+                      Category Name
+                    </th>
+                    <th scope="col" class="bg-dark">
+                      Category Description
+                    </th>
+                    <th scope="col" class="bg-dark">
+                      Image
+                    </th>
+                    <th scope="col" class="bg-dark">
+                      Category Update
+                    </th>
+                    <th scope="col" class="bg-dark">
+                      Category Delete
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.category.length > 0 &&
+                    this.state.category.map((item, index) => (
+                      <tr>
+                        <td>
+                          <div style={{ position: "relative", top: "30px" }}>
+                            {item.categoryName}
+                          </div>
+                        </td>
+                        <td>
+                          <div style={{ position: "relative", top: "30px" }}>
+                            {item.categoryDescription}
+                          </div>
+                        </td>
+                        <td width="10%">
+                          <img
+                            src={`/uploads/${item.categoryImage}`}
+                            alt="..."
+                            style={{ width: "90%", borderRadius: "15%" }}
+                            id="sImage"
+                          />
+                        </td>
+                        <td>
+                          <div style={{ position: "relative" }}>
+                            <button
+                              type="button"
+                              class="btn edit-btn-category"
+                              onClick={(e) =>
+                                this.navigateToUpdateCategoryPage(
+                                  e,
+                                  item.categoryName
+                                )
+                              }
+                            >
+                              <i class="far fa-edit"></i> &nbsp; Update
+                            </button>
+                          </div>
+                        </td>
+                        <td>
+                          <div style={{ position: "relative" }}>
+                            <button
+                              type="button"
+                              class="btn delete-btn-category"
+                              onClick={(e) =>
+                                this.navigateToDeleteCategoryPage(
+                                  e,
+                                  item.categoryName
+                                )
+                              }
+                            >
+                              <i class="far fa-trash-alt"></i> &nbsp; Delete
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
             </TableScrollbar>
             <br></br>
           </div>

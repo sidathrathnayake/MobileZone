@@ -54,6 +54,9 @@ import AdminItemView from "./components/Item/AdminItemView";
 import ItemByCategory from "./components/Item/ItemByCategory";
 import UserViewItemLogged from "./components/Item/UserViewItemLogged";
 import ItemByCategoryLogged from "./components/Item/ItemByCategoryLogged";
+import UpdateItem from "./components/Item/UpdateItem";
+import ItemReport from "./components/Item/ItemReport";
+
 
 /**Yathushan*/
 import Shipping_Address from './components/order_and_payment/shippingAddress';
@@ -106,7 +109,8 @@ const App = () => {
             <Route exact path="/admin-get-item" component={AdminItemView}/>
             <Route exact path="/user-get-item-logged" component={UserViewItemLogged}/>
             <Route exact path="/user-get-item-logged/:id" component={ItemByCategoryLogged}/>
-
+            <Route exact path="/user-update-item-logged/:id" component={UpdateItem}/>
+            <Route exact path="/item-report" component={ItemReport}/>
 
             
         

@@ -111,8 +111,8 @@ class Read_User extends Component {
                         className="btn btndlt"
                         href="#"
                         onClick={() => this.onDelete(users._id)}
-                      ><i className="fas fa-trash-alt"></i>
-                        Delete
+                      ><i className="far fa-trash-alt"></i>
+                         &nbsp;&nbsp;&nbsp;Delete
                       </a>
                     </td>
                   </tr>

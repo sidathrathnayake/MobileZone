@@ -64,20 +64,27 @@ export default class Category_Update extends Component {
 
     render() {
         return (
-            <div className="wrapper" style={{ backgroundColor: 'rgba(0,0,0,0.25)', height: "788px" }}>
+            <div className="wrapper">
                 <Sidebar />
-                <div>
-                    <h1 className="heading" style={{ marginTop: "10%" }}>Delete Category</h1>
+                <div className="adminhome-container" style={{ backgroundColor: 'rgba(0,0,0,0.25)'}}>
+                <div className="adminnav">
+            <h1>
+              <a href="#">
+                <i className="fa fa-clipboard-list"></i> Delete Category
+              </a>
+            </h1>
+            
+          </div>
                     <div>
-                        <div className="orderUpdateCont">
+                        <div className="orderUpdateCont" style={{ marginTop: "25%",marginBottom: "30.7%"  }} >
                             <form style={{ padding: '20px' }}>
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "10px" }}>
                                     <label for="form-control-orderId" class="col-4 form-label updateLabel">Category Name</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-orderId" name="categoryName" value={this.state.categoryName} readOnly />
                                     </div>
                                 </div><br />
-                                <div class="form-group row updateOrdRow" style={{ height: "86px" }}>
+                                <div class="form-group row updateOrdRow" style={{ height: "86px", marginBottom: "10px" }}>
                                     <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Category Description</label>
                                     <div class="col-6">
                                         <textarea class="form-control category-update-description" name="categoryDescription" value={this.state.categoryDescription} rows="3" readOnly></textarea>

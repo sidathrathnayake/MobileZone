@@ -3,7 +3,7 @@ import axios from 'axios';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import logo from '../../image/allcover.png'
-import title from '../../image/titlepdf.png'
+import title from '../../image/customerpdf.jpg'
 import TableScrollbar from 'react-table-scrollbar';
 
 class User_PDF extends Component {

@@ -14,7 +14,8 @@ router.post('/admin/add-item',upload.single('file'),async (req, res) =>{
         itemDescription:req.body.itemDescription,
         imageName:req.file.filename,
         imageUrl:req.file.path,
-        countInStock:req.body.countInStock
+        countInStock:req.body.countInStock,
+        insertData:new Date().toISOString().slice(0, 10)
     };
     console.log(item);
     try{
@@ -123,6 +124,7 @@ router.get('/get-item-By-category/:id',async (req, res)=>{
     }
 })
 
+
 router.get('/get-item-by-id/:id',async(req,res) => {
     try{
         await Item.findById(req.params.id)
@@ -157,4 +159,73 @@ router.get('/get-item-by-id/:id',async(req,res) => {
 //         })
 //     }
 // })
+//------------------------------------------------------------
+/**1 */
+router.delete("/delete-item/:id", async(req, res) =>{
+    try{
+        console.log(req.params.id);
+        await Item.findByIdAndDelete(req.params.id).then(data =>{
+            res.status(200).send({
+                success:true,
+                message: "Item delete successfully !"
+            })
+        })    
+    }catch(error){
+        res.status(500).send({
+            success:false,
+            message:"Server error !"
+        })
+    }
+});
+
+/**2 */
+/** Update item by id */
+router.put('/update-item/:id',upload.single('file'),async(req, res)=>{
+    console.log(req.params.id);
+    const item = {
+
+        itemName:req.body.itemName,
+        itemPrice:req.body.itemPrice,
+        itemCategory:req.body.itemCategory,
+        itemDescription:req.body.itemDescription,
+        imageName:req.file.filename,
+        imageUrl:req.file.path,
+        countInStock:req.body.countInStock,
+        insertData:req.body.insertData
+    };
+    console.log(item);
+    try{
+        await Item.findByIdAndUpdate(req.params.id,{$set:item})
+            .then(data=>{
+                res.status(200).send({data:data})
+            });
+    }catch (err) {
+        console.log(err);
+        res.status(500).send({
+            success:false,
+            error:err.message
+        })
+    }
+});
+/**3*/
+/** Get item by date */
+router.get('/get-items-by-date/:startDate/:endDate',async(req, res) => {
+
+    try{
+
+        await Item.find({insertData:{$gte: req.params.startDate,$lte: req.params.endDate}}).then(data => {
+            res.status(200).send({
+                data:data,
+                success:true
+            })
+        })
+
+    }catch(error){
+        res.status(500).send({
+            success:false,
+            message:"Server error"
+        })
+    }
+});
+
 module.exports = router;

@@ -3,44 +3,68 @@ import axios from "axios";
 import Sidebar from '../Navigation/Sidebar';
 import '../../css/adminItemView.css';
 import TableScrollbar from 'react-table-scrollbar';
+import DeleteItemModal from "./DeleteItemModal";
 
 export default class AdminItemView extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            products:[],
-            keyWord:''
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      showDelete: false,
+      products: [],
+      keyWord: "",
+      selectedID: "",
+      selectedName: "",
+    };
 
-        this.btnOnClick = this.btnOnClick.bind(this);
-        this.onSearchHandler = this.onSearchHandler.bind(this);
-    }
+    this.btnOnClick = this.btnOnClick.bind(this);
+    this.onSearchHandler = this.onSearchHandler.bind(this);
+    this.showHandler = this.showHandler.bind(this);
+    this.closeHandler = this.closeHandler.bind(this);
+  }
 
-    componentDidMount() {
-        axios.get('http://localhost:5000/get-items')
-        .then(res => {
-            this.setState({products:res.data.data});
-            console.log(this.state.products);
-        }).catch(err=>{
-            console.error(new Error(err));
-        })
-    }
+  componentDidMount() {
+    axios
+      .get("http://localhost:5000/get-items")
+      .then((res) => {
+        this.setState({ products: res.data.data });
+      })
+      .catch((err) => {
+        console.error(new Error(err));
+      });
+  }
 
-    btnOnClick(){
-        alert("Function not implemented !");
-    }
+  btnOnClick(event, id) {
+    this.props.history.push(`/user-update-item-logged/${id}`);
+  }
 
-    onSearchHandler(e){
-        this.setState({[e.target.name]:e.target.value})
-        axios.post('http://localhost:5000/search-items',{keyWord:this.state.keyWord})
-        .then(res=>{
-            this.setState({products:res.data.data});
-        }).catch(err=>{
-            console.error(new Error(err));
-        })
-        console.log(this.state.keyWord);
-    }
+  onSearchHandler(e) {
+    this.setState({ [e.target.name]: e.target.value });
+    axios
+      .post("http://localhost:5000/search-items", {
+        keyWord: this.state.keyWord,
+      })
+      .then((res) => {
+        this.setState({ products: res.data.data });
+      })
+      .catch((err) => {
+        console.error(new Error(err));
+      });
+    console.log(this.state.keyWord);
+  }
 
+  showHandler(event, id, itemName) {
+    this.setState({ showDelete: true });
+    this.setState({ selectedID: id });
+    this.setState({ selectedName: itemName });
+  }
+
+  closeHandler() {
+    this.setState({ showDelete: false });
+  }
+  goPrint = () => {
+    this.props.history.push("/item-report");
+  };
+  
     render() {
         return (
             <div className="wrapper">
@@ -91,8 +115,33 @@ export default class AdminItemView extends Component {
                                 <td>{item.itemName}</td>
                                 <td>Rs. {item.itemPrice}.00</td>
                                 <td>{item.itemCategory}</td>
-                    <td> <button className="btn btn-primary" id="button-update" onClick={this.btnOnClick}>Update</button> </td>
-                    <td> <button className="btn btndlt" id="button-delete" onClick={this.btnOnClick}>Delete</button> </td>
+                   
+                    <td>
+                      {" "}
+                      <button
+                        className="btn edit-btn-category"
+                        onClick={(event) => this.btnOnClick(event, item._id)}
+                      >
+                        Update
+                      </button>{" "}
+                    </td>
+                    <td>
+                      <button
+                        className="btn delete-btn-category"
+                        onClick={(event) =>
+                          this.showHandler(event, item._id, item.itemName)
+                        }
+                      >
+                        Delete
+                      </button>
+                      <DeleteItemModal
+                        handleClose={this.closeHandler}
+                        show={this.state.showDelete}
+                        itemID={this.state.selectedID}
+                        itemName={this.state.selectedName}
+                      />
+                    </td>
+
                   </tr>
                 ))}
               </tbody>

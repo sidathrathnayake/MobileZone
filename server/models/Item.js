@@ -28,6 +28,10 @@ const ItemSchema = new mongoose.Schema({
     countInStock: {
         type:Number,
         required:true
+    },
+    insertData:{
+        type:Date,
+        require:true
     }
 
 })

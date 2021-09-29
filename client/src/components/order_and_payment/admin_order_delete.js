@@ -54,50 +54,57 @@ export default class admin_delete_orders extends Component {
 
     render() {
         return (
-            <div className="wrapper" style={{backgroundColor:'rgba(0,0,0,0.25)'}}>
+            <div className="wrapper" >
                 <Sidebar/> 
-                <div>
-                    <h1 className="heading">Delete Order</h1>
+                <div className="adminhome-container" style={{backgroundColor:'rgba(0,0,0,0.25)'}}>
+          <div className="adminnav">
+            <h1>
+              <a href="#">
+                <i className="fa fa-coins"></i> Delete Orders
+              </a>
+            </h1>
+            
+          </div>
                     <div>
-                        <div className="orderUpdateCont">
+                        <div className="orderUpdateCont" style={{ marginTop: "15%",marginBottom: "16.6%"  }}>
                             <form style={{padding:'20px'}} onSubmit={this.onSubmit}>
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "5px" }}>
                                     <label for="form-control-orderId" class="col-4 form-label updateLabel">Order Id</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-orderId" name="orderId" value={this.state.orders.orderId} readOnly/>
                                     </div>
                                 </div><br/>
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "5px" }}>
                                     <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Shipping Id</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-shippingAddress" name="shippingAddress" value={this.state.shippingAddress.address+', '+this.state.shippingAddress.country+', '+this.state.shippingAddress.postalCode} readOnly/>
                                     </div>
                                 </div><br/>
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "5px" }}>
                                     <label for="form-control-user" class="col-4 form-label updateLabel">User Email</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-user" name="user" value={this.state.orders.user} readOnly/>
                                     </div>
                                 </div><br/>
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "5px" }}>
                                     <label for="form-control-orderDate" class="col-4 form-label updateLabel">Order Date</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-orderDate" name="orderDate" value={dateformat(this.state.orders.orderDate)} readOnly/>
                                     </div>
                                 </div><br/>
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "5px" }}>
                                     <label for="form-control-totalCharge" class="col-4 form-label updateLabel">Total Charge</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-totalCharge" name="totalCharge" value={"Rs."+this.state.orders.totalCharge} readOnly/>
                                     </div>
                                 </div><br/>  
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "5px" }}>
                                     <label for="form-control-paymentStatus" class="col-4 form-label updateLabel">Payment Status</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-paymentStatus" name="paymentStatus" value={this.state.orders.paymentStatus} readOnly/>
                                     </div>
                                 </div><br/>
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "5px" }}>
                                     <label for="form-control-deliveryStatus" class="col-4 form-label updateLabel">Delivery Status</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-deliveryStatus" name="deliveryStatus" value={this.state.orders.deliveryStatus} readOnly/>

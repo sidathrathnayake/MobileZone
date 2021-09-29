@@ -139,10 +139,10 @@ export default class InsertItem extends Component {
             </h1>
             
           </div>
-                <div className="table-container">
+                <div className="table-container" >
                     <div >
                         <div>
-                           <br/><br/>
+                           <br/>
                             <form className='container-sm' style={{borderRadius:"15px",alignItems:"flex-start",maxWidth:"48%",padding:"5%"}}>
                                 <div className="mb-3">
                                     

@@ -65,46 +65,50 @@ export default class Category_Insert extends Component {
     }
   }
 
-    render() {
-        return (
-            <div className="wrapper">
-                <Sidebar/> 
-                <div className="adminhome-container">
+  render() {
+    return (
+      <div className="wrapper">
+        <Sidebar />
+        <div className="adminhome-container" style={{ backgroundColor: 'rgba(0,0,0,0.25)'}}>
                 <div className="adminnav">
             <h1>
-              <a href="/userdetails">
+              <a href="#">
                 <i className="fa fa-clipboard-list"></i> Insert Category
               </a>
             </h1>
             
           </div>
-                    <div className="table-container"><br/><br/><br/>
-                        <div class="card card-form">
-                            
-                                <div class="card-body category-form-body" style={{backgroundColor:"#fff"}}>
-                                    
-                                        <form >
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label label-category">Category Name</label>
-                                                <input type="text" class="form-control control-form" id="exampleInputEmail1" name="categoryName" value={this.state.categoryName} onChange={this.onChange} required/>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label label-category" style={{marginLeft:"-80%"}}>Category Description</label>
-                                                <textarea class="form-control control-form-description" name="categoryDescription" value={this.state.categoryDescription} onChange={this.onChange} rows="3" required></textarea>
-                                            </div>
-                                            <div class="mb-4">
-                                                <label for="exampleInputEmail1" class="form-label label-category-image" style={{marginLeft:"0%"}}>Category Image</label>
-                                                <input class="form-control category-file" type="file" id="formFile" name="categoryImage" onChange={this.onFileChange} required/>
-                                            </div>
-                                            <div className="mb-2">
-                                                <button type="submit" class="btn btn-insert-category" onClick={this.onSubmit}>Insert Category</button>
-                                            </div>
-                                        </form>
-                                </div>
-                        </div>
-                    </div>
-                    </div>
+          <div>
+            <div className="orderUpdateCont" style={{ marginTop: "23%",marginBottom: "22.7%"  }} >
+              <form style={{ padding: '20px' }}>
+                <div class="form-group row updateOrdRow" style={{ marginBottom: "10px" }}>
+                  <label for="form-control-orderId" class="col-4 form-label updateLabel">Category Name</label>
+                  <div class="col-6">
+                    <input type="text" className="form-control updateInput" id="form-control-orderId" name="categoryName" value={this.state.categoryName} onChange={this.onChange} required />
+                  </div>
+                </div><br />
+                <div class="form-group row updateOrdRow" style={{ height: "86px", marginBottom: "30px"  }}>
+                  <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Category Description</label>
+                  <div class="col-6">
+                    <textarea class="form-control category-update-description" name="categoryDescription" value={this.state.categoryDescription} onChange={this.onChange} rows="3" required></textarea>
+                  </div>
+                </div><br />
+                <div class="form-group row updateOrdRow" style={{ marginBottom: "10px" }}>
+                  <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Category Image</label>
+                  <div class="col-6">
+                    <input type="file" className="form-control updateInput" id="form-control-orderId" name="categoryImage" onChange={this.onFileChange} required />
+                  </div>
+                </div><br /><br />
+                <div className="row">
+                  <div className="col">
+                    <button type="submit" class="dark-btn" onClick={this.onSubmit}>Insert Category</button>
+                  </div>
+                </div>
+              </form>
             </div>
+          </div>
+        </div>
+      </div>
 
 
     )

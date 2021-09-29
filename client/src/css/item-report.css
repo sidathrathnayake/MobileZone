@@ -1,0 +1,58 @@
+.c-b {
+  border-right: 1px solid red;
+  border-left: 1px solid blue;
+  border-top: 1px solid black;
+  border-bottom: 1px solid green;
+}
+
+.r-middle-content {
+  height: 500px;
+}
+.r-left-container {
+  padding: 10px;
+}
+.report-details {
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+.item-list-container {
+  overflow: auto;
+  height: 350px;
+}
+.r-right-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+.r-form-btn {
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+}
+#btn-get {
+  margin-top: 30px;
+  margin-right: 5px;
+}
+#btn-save {
+  float: right;
+  margin-top: 30px;
+}
+.paraItem {
+  padding: 0;
+  border: 1px solid red;
+}
+
+.my-tables {
+  all: unset;
+  font-size: small;
+}
+.ttd {
+  background: white;
+  color: gray;
+  padding: 5px;
+}
+.item_report_table {
+  all: unset;
+  display: none;
+}

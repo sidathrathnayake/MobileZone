@@ -85,31 +85,38 @@ export default class Category_Update extends Component {
 
     render() {
         return (
-            <div className="wrapper" style={{ backgroundColor: 'rgba(0,0,0,0.25)', height: "788px" }}>
+            <div className="wrapper" >
                 <Sidebar />
-                <div>
-                    <h1 className="heading" style={{ marginTop: "10%" }}>Update Category</h1>
+                <div className="adminhome-container" style={{ backgroundColor: 'rgba(0,0,0,0.25)'}}>
+                <div className="adminnav">
+            <h1>
+              <a href="#">
+                <i className="fa fa-clipboard-list"></i> Update Category
+              </a>
+            </h1>
+            
+          </div>
                     <div>
-                        <div className="orderUpdateCont">
+                        <div className="orderUpdateCont" style={{ marginTop: "20%",marginBottom: "27%"  }}>
                             <form style={{ padding: '20px' }}>
-                                <div class="form-group row updateOrdRow">
+                                <div class="form-group row updateOrdRow" style={{ marginBottom: "10px" }} >
                                     <label for="form-control-orderId" class="col-4 form-label updateLabel">Category Name</label>
                                     <div class="col-6">
                                         <input type="text" className="form-control updateInput" id="form-control-orderId" name="categoryName" value={this.state.categoryName} onChange={this.onChange} />
                                     </div>
-                                </div><br />
-                                <div class="form-group row updateOrdRow" style={{ height: "86px" }}>
+                                </div><br/>
+                                <div class="form-group row updateOrdRow" style={{ height: "86px",marginBottom: "30px" }}>
                                     <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Category Description</label>
                                     <div class="col-6">
                                         <textarea class="form-control category-update-description" name="categoryDescription" value={this.state.categoryDescription} onChange={this.onChange} rows="3" ></textarea>
                                     </div>
-                                </div><br />
-                                <div class="form-group row updateOrdRow">
+                                </div><br/>
+                                <div class="form-group row updateOrdRow" >
                                     <label for="form-control-shippingAddress" class="col-4 form-label updateLabel">Category Image</label>
                                     <div class="col-6">
                                         <input type="file" className="form-control updateInput" id="form-control-orderId" name="categoryImage" onChange={this.onFileChange} />
                                     </div>
-                                </div><br /><br />
+                                </div><br/><br/>
                                 <div className="row">
                                     <div className="col">
                                         <button type="button" onClick={e => this.navigateToViewCategoryPage(e)} class="dark-btn">Back</button>
