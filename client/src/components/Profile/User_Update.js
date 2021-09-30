@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import axios from 'axios';
 import insert1 from '../../image/register.svg';
-import NormalNavigation from '../Navigation/Normal_Navigation';
+import UserNavigation from '../Navigation/User_Navigation';
 import Footer from '../Footer/Footer';
-import moment from 'moment'
 
-class User_Register extends Component {
-
+export default class User_Update extends Component {
+    
     constructor(props){
         super(props);
-        var today = new Date(),
-        date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        
+    
         this.state = {
             userName:"",
             userEmail:"",
-            userDate:moment().format("YYYY-MM-DD"),
-            userPassword:"",
-            userConfirmPassword:"",
     
         }
     }
@@ -31,65 +25,60 @@ class User_Register extends Component {
         })
         
     }
+
+    componentDidMount(){
+        
+        axios.get(`http://localhost:5000/user/userdatas/${localStorage.getItem("userId")}`).then((res) =>{
+            if(res.data.success){
+                this.setState({
+                    userName: res.data.user.userName,
+                    userEmail: res.data.user.userEmail,
+    
+                });
+                console.log(this.state.userdata)
+            }
+        })
+    }
     
     onSubmit = (e) => {
         e.preventDefault();
+        const { userName, userEmail}= this.state;
         
-        const {userName, userEmail,userDate,userPassword,userConfirmPassword }= this.state;
-        if(this.state.userPassword.length < 6 ){
-            setTimeout((err)=>{
-                return alert("Password must contain atleast 6 characters"); 
-            },2000);
-            
-        }
-        if( this.state.userPassword !== this.state.userConfirmPassword){
-            setTimeout((err)=>{
-                return alert("Password miss matching"); 
-            },2000);
-            
-        }
-        else{
             
         const data = {
             userName: userName, 
             userEmail: userEmail,
-            userDate:userDate,
-            userPassword: userPassword
         }
-        axios.post('http://localhost:5000/user/userregister', data).then((res) =>{
+        axios.put(`http://localhost:5000/user/updateuser/${localStorage.getItem("userId")}`, data).then((res) =>{
             if(res.data.success){
+                alert("Updated successfully");
                 this.setState(
                     {   
                         userName:"",
                         userEmail:"",
-                        userDate:"",
-                        userPassword:""
                     }
                 )
-                alert('Registered Successfully')
-                this.props.history.push('/userlogin');
+                this.props.history.push('/userprofile');
             }
-
             else{
-                alert('Registration unsuccessful. Try again later.')
+                alert("Unable to update the data. Please try again!");
             }
-        });
+        })
         
-        }
-    };
+    }
 
     render() {
         return (
             <div>
 
-            <NormalNavigation/>
+            <UserNavigation/>
             <div className="userbody">
             <div className="test-container">
             <div className="insert-container">
             <div className="forms-container">
                 <div className="insert">
                     <form className="insert-form1" method="POST">
-                        <h1>Sign Up</h1><br/><br/>
+                        <h1>Update</h1><br/><br/>
                         
                         <div className="input-field">
                             <i class="fas fa-user-circle"></i>
@@ -119,35 +108,9 @@ class User_Register extends Component {
                                 </input>
                         </div>
 
-                        <div className="input-field">
-                            <i className="fas fa-lock"></i>
-                            <input
-                                    type="password" 
-                                    id="userPassword" 
-                                    value={this.state.userPassword} 
-                                    onChange={this.handleInputChange}
-                                    name="userPassword" 
-                                    placeholder="Enter Password"
-                                    required    
-                                >
-                                </input>
-                        </div>
-
-                        <div className="input-field">
-                            <i className="fas fa-user-lock"></i>
-                            <input 
-                                type="password" 
-                                id="userConfirmPassword" 
-                                value={this.state.userConfirmPassword} 
-                                onChange={this.handleInputChange}
-                                name="userConfirmPassword"  
-                                placeholder="Confirm Password..."
-                                required>
-                            </input>
-                        </div>
                         <div>
                             <button type="submit" onClick={this.onSubmit} 
-                            className="btn btn-primary" tabIndex={3}>Register</button>
+                            className="btn btn-primary" tabIndex={3}>Update</button>
                         </div>
                     </form>
                 </div>
@@ -156,7 +119,7 @@ class User_Register extends Component {
             <div className="panels-container">
                 <div className="panel left-panel">
                     <div className="panel-content">
-                        <p>Please enter your Registration details.</p>
+                        <p>Please upate your data.</p>
                     </div>
                     
                     <img className="insert-image" src={insert1} alt="Logo" />
@@ -169,8 +132,6 @@ class User_Register extends Component {
             </div>
             <Footer/>
         </div>
-        );
+        )
     }
 }
-
-export default User_Register;

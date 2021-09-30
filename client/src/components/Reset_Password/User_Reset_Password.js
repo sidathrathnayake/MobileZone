@@ -64,6 +64,7 @@ userResetpasswordHandler = async (e) => {
         return (
             <div>
             <NormalNavigation/>
+            <div className="test-container">
             <div className="insert-container">
             <div className="forms-container">
                 <div className="insert">
@@ -116,6 +117,7 @@ userResetpasswordHandler = async (e) => {
                 </div>
             </div>
             
+            </div>
             </div>
             <Footer/>
         </div>
