@@ -124,7 +124,7 @@ export default class Admin_View_Orders extends Component {
             
           </div>
           <div className="table-container">
-          <TableScrollbar rows={8}>
+          <TableScrollbar rows={10}>
                     <table id="orderTable">
                         <thead>
                             <tr>

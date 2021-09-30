@@ -36,9 +36,10 @@ export default class ItemByCategoryLogged extends Component {
                 <div className="test-container" id='test-container-id'>
                     <div className='container-fluid' id="middle-content">
                         <div id="item-header">
-                            <h1 style={{color: '#000'}}>{this.state.category}</h1>
+                            <h1 style={{color: '#000',  marginTop: "-4%"}}>{this.state.category}</h1>
                         </div>
-                        <div className="grid-container" id="user_view">
+                        <div className="container-fluid" style={{display: "flex", justifyContent: "center", alignItems:"center"}}>
+                        <div className="grid-container" style={{ width: "100%"}} id="user_view">
                             {this.state.categoryItems.length > 0 && this.state.categoryItems.map((item, index)=>(
                                 <div key={index} className="grid-item">
                                     <div className='card-middle-content'>
@@ -55,7 +56,7 @@ export default class ItemByCategoryLogged extends Component {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </div></div>
                 </div>
                 <Footer/>
             </div>

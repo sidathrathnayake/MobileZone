@@ -37,9 +37,9 @@ export default class Category_ViewCustomer extends Component {
             <div >
                 <NormalNavigation/><br></br><br></br>
                 <div className="container-fluid" >
-                    <h4 className="category-h4" style={{color:"black"}}>Shop By Category</h4>
-                        <div className="container container-cat">
-                            <div className="row justify-content-right card-cat">
+                    <h4 className="category-h4" style={{color:"black"}}>Shop By Category</h4><br/>
+                            <div className="container-fluid container-cat">
+                                <div className="row" style={{width:"100%", marginLeft:"1%"}}>
                                 {this.state.category.length > 0 && this.state.category.map((item, index) => (
                                     <div className="col-md-3">
                                         <div class="card shadow" style={{width: "20rem"}}>

@@ -19,7 +19,7 @@ const multer = require("multer");
 /**Initializing disk storage */
 const storage = multer.diskStorage({
     destination : (req,file, callback) => {
-        callback(null, "E:/GitHUB/MobileZone-master/client/public/uploads/");
+        callback(null, "C:/Users/msi gf63/Desktop/MobileZone/client/public/uploads/");
     },
     filename : (req,file, callback) => {
         callback(null, file.originalname);

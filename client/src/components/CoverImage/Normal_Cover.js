@@ -68,7 +68,7 @@ componentDidMount(){
                         <div className="cover-details">
                             <h4>Find the best Apple mobiles from here.</h4>
                             <p>Buy world famous mobile devices for a lowest price around the world. </p>
-                            <button className="btn" ><a href="/ho">Find</a></button>
+                            <button className="btn" ><a href="/">Find</a></button>
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@ componentDidMount(){
                         <div className="cover-details">
                             <h4>Find the best Samsung mobiles from here.</h4>
                             <p>Buy world famous mobile devices for a lowest price around the world. </p>
-                            <button className="btn" ><a href="/ho">Find</a></button>
+                            <button className="btn" ><a href="/">Find</a></button>
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@ componentDidMount(){
                         <div className="cover-details">
                             <h4>Find the best Huawei mobiles from here.</h4>
                             <p>Buy world famous mobile devices for a lowest price around the world. </p>
-                            <button className="btn" ><a href="/ho">Find</a></button>
+                            <button className="btn" ><a href="/">Find</a></button>
                         </div>
                     </div>
 
@@ -104,7 +104,7 @@ componentDidMount(){
                         <div className="cover-details">
                             <h4>Find the best mobile accessories from here.</h4>
                             <p>Buy best mobile accessories for a lowest price. </p>
-                            <button className="btn" ><a href="/ho">Find</a></button>
+                            <button className="btn" ><a href="/">Find</a></button>
                         </div>
                     </div>
 

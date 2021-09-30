@@ -5,6 +5,8 @@ import { PayPalButton } from "react-paypal-button-v2";
 import User_Navigation from '../../components/Navigation/User_Navigation';
 import Footer from '../Footer/Footer';
 
+const dtotal = localStorage.getItem("total_charge")/200;
+
 class orderSummary extends Component {
   
   onPay(details) {
@@ -43,7 +45,13 @@ class orderSummary extends Component {
   }
   
   render (){
+
+    
+    
     return(
+
+     
+
       <div>
         <User_Navigation/>
         <div className="row orderPage">
@@ -93,7 +101,7 @@ class orderSummary extends Component {
                   </div>
                 
                 <PayPalButton
-                  amount={localStorage.getItem("total_charge") / 199.61}
+                  amount= {dtotal}
                   shippingPreference="NO_SHIPPING"
                   onSuccess={(details) => {
                     this.onPay(details);
