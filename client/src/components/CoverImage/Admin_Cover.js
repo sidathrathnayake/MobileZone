@@ -47,7 +47,7 @@ componentDidMount(){
 
                     <div className="cover-slides">
                         <h2>Mobiles
-                            <span><a href="/">MobileZone.com</a></span>
+                            <span><a href="/adminhome">MobileZone.com</a></span>
                         </h2>
                         <img className="cover-image" src={insert1} alt="Logo" />
                         <div className="cover-details">

@@ -57,8 +57,8 @@ class User_Login extends Component {
                 if(res.data.success){
                     localStorage.setItem("userToken", res.data.token);
                     localStorage.setItem("userEmail", data.userEmail);
-                    alert('Logedin successfully.')
-                    this.props.history.push('/userhome');
+                    alert('Sign in successfully.')
+                    this.props.history.push('/userprofile');
                 }
                 else{
                     alert('Email or password Incorrect.')

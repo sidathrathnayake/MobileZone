@@ -1,6 +1,15 @@
 .table-container{
-    padding: 3%;
+    padding: 1%;
+    margin-left: 300px;
+    width: 100%;
 }
+
+.user-container{
+    padding: 1%;
+    margin-top: 5%;
+    margin-left: 300px;
+}
+
 .form-container{
     
     display: flex;
@@ -74,3 +83,16 @@
     height: 105vh;
 
 }
+
+.wrapper{
+    display: flex;
+}
+
+.adminhome-container{
+    display: grid;
+    place-items: center center;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 300px;
+    margin-top: 10%;
+}
+

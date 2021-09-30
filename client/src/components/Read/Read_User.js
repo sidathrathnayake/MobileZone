@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import AdminNavigation from '../Navigation/Admin_Navigation';
-import Footer from '../Footer/Footer';
+import Sidebar from '../Navigation/Sidebar'
 
 class Read_User extends Component {
 
@@ -62,11 +61,12 @@ handleSearch = (e) =>{
 
     render() {
         return (
-            <div>
-            <AdminNavigation/>
-            <div className="test-container">
+            <div className="wrapper">
+
+            <Sidebar/>
+            
                 <div className="table-container">
-                    <h1>MobileZone Customers</h1>
+                <h1>Customers</h1><br/>
                     <div className="table-search">
                     <input
                             className="form-control"
@@ -93,8 +93,8 @@ handleSearch = (e) =>{
                                 <td>{users.userName}</td>
                                 <td>{users.userEmail}</td>
                                 <td>
-                                    <a className="btn btn-danger" href="#" onClick={() => this.onDelete(users._id)}>
-                                    <i className="fas fa-trash-alt"></i>&nbsp; Delete
+                                    <a className="btn btndlt" href="#" onClick={() => this.onDelete(users._id)}>
+                                    Delete<i className="fas fa-trash-alt"></i> 
                                     </a>
                                 </td>
                             </tr>
@@ -102,9 +102,7 @@ handleSearch = (e) =>{
                             
                         </tbody>
                     </table>
-                </div>
-                </div>
-                <Footer/>               
+                </div>          
             </div>
         );
     }

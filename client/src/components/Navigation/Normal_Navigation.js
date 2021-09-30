@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserClassNavigation from './User_Class_Navigation';
 
 class Normal_Navigation extends Component {
     render() {
@@ -7,17 +8,9 @@ class Normal_Navigation extends Component {
                  <nav>
                     <h1 className="nav-home"><a href="/">Mobile<span>Zone</span></a></h1>
                     <ul>  
-                        <li><a href="#">Devices<i className="fas fa-caret-down"></i></a>
-                            <div className="nav-dropdown">
-                                <ul>
-                                    <li><a href="#">Apple</a></li>
-                                    <li><a href="#">Samsung</a></li>
-                                    <li><a href="#">Huawei</a></li>
-                                    <li><a href="#">Accessories</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        <UserClassNavigation/>
                         <li><a href="/userlogin">Sign in</a></li>
+                        <li><a href="/adminlogin">Admins</a></li>
                     </ul>
                 </nav>
             </div>
