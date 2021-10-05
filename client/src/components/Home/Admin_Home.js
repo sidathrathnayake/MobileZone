@@ -33,8 +33,8 @@ class Admin_Home extends Component {
                                 <img className="admincard-image" src={itemcard} alt="Card" />
                             </div>
                             <div className="admincard-details">
-                                <h3>Items</h3>
-                                <p>Handle Items details.</p>
+                                <h3>Products</h3>
+                                <p>Handle product details.</p>
                             </div>
                         </div>
                         </a>

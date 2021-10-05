@@ -10,7 +10,7 @@ class User_Home extends Component {
             <div>
                 <UserNavigation/>
                 <UserCover/>
-                {/* <LatestItems/> */}
+                <LatestItems/>
                 <Footer/>
             </div>
         );
