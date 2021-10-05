@@ -5,8 +5,6 @@ import { PayPalButton } from "react-paypal-button-v2";
 import User_Navigation from '../../components/Navigation/User_Navigation';
 import Footer from '../Footer/Footer';
 
-const dtotal = localStorage.getItem("total_charge")/200;
-
 class orderSummary extends Component {
   
   onPay(details) {
@@ -31,7 +29,7 @@ class orderSummary extends Component {
       axios.post('http://localhost:5000/order/add', Order)
       .then(response => {
         alert(details.payer.name.given_name+", Your Payment is successful");
-        window.location='/userprofile'
+        window.location='/userViewOrd'
         localStorage.removeItem("cart");
       })
       .catch(error => {
@@ -45,13 +43,7 @@ class orderSummary extends Component {
   }
   
   render (){
-
-    
-    
     return(
-
-     
-
       <div>
         <User_Navigation/>
         <div className="row orderPage">
@@ -80,28 +72,28 @@ class orderSummary extends Component {
                   <h2 id="ordSummaryH2">Order Summary</h2>
                   <hr id="hrLine"/>
                   <div className="row ordTotal">
-                    <div>Items Total:&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;Rs.{localStorage.getItem("order_Total")}</div>
+                    <div>Items Total:&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;${localStorage.getItem("order_Total")}</div>
                   </div>
                 
                
                   <div className="row ordTotal">
-                    <div>Shipping Charge:&emsp;&emsp;&nbsp;&nbsp;&nbsp;Rs.{localStorage.getItem("Shipping_charge")}</div>
+                    <div>Shipping Charge:&emsp;&emsp;&nbsp;&nbsp;&nbsp;${localStorage.getItem("Shipping_charge")}</div>
                     <div></div>
                   </div>
                 
                   <div className="row ordTotal">
-                    <div>Tax Charge:&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;Rs.{localStorage.getItem("tax_charge")}</div>
+                    <div>Tax Charge:&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;${localStorage.getItem("tax_charge")}</div>
                     <div></div>
                   </div>
               
                   <div className="row ordTotal">
                     <div>
-                      <strong> Order Total:&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.{localStorage.getItem("total_charge")}</strong>
+                      <strong> Order Total:&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${localStorage.getItem("total_charge")}</strong>
                     </div>
                   </div>
                 
                 <PayPalButton
-                  amount= {dtotal}
+                  amount={localStorage.getItem("total_charge")}
                   shippingPreference="NO_SHIPPING"
                   onSuccess={(details) => {
                     this.onPay(details);

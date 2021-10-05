@@ -54,9 +54,8 @@ import AdminItemView from "./components/Item/AdminItemView";
 import ItemByCategory from "./components/Item/ItemByCategory";
 import UserViewItemLogged from "./components/Item/UserViewItemLogged";
 import ItemByCategoryLogged from "./components/Item/ItemByCategoryLogged";
-import UpdateItem from "./components/Item/UpdateItem";
-import ItemReport from "./components/Item/ItemReport";
-
+import UpdateItem from './components/Item/UpdateItem';
+import ItemReport from './components/Item/ItemReport'
 
 /**Yathushan*/
 import Shipping_Address from './components/order_and_payment/shippingAddress';

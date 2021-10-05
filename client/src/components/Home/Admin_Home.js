@@ -12,7 +12,7 @@ class Admin_Home extends Component {
                 <Sidebar/>
                 
                 <div className="adminhome-container">
-                <div className="adminnav"><h1><a href="/adminhome"><i className="fa fa-home"></i>  &nbsp;&nbsp;Home</a></h1></div>
+
                     <div className="admincards">
 
                         <a href="/userdetails">
@@ -51,7 +51,7 @@ class Admin_Home extends Component {
                         </div>
                         </a>
 
-                        <a href="/adminViewOrder">
+                        <a href="#">
                         <div className="admincard">
                             <div className="admincard-container">
                                 <img className="admincard-image" src={ordercard} alt="Card" />

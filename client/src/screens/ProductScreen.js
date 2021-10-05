@@ -9,7 +9,7 @@ import { getProductDetails } from "../redux/actions/productActions";
 /**Importing the addToCart method from the cartActions file */
 import { addToCart } from "../redux/actions/cartActions";
 /**Importing the header */
-import NormalNavigation from '../components/Navigation/Normal_Navigation';
+import User_Navigation from '../components/Navigation/User_Navigation';
 /**Importing the footer */
 import Footer from '../components/Footer/Footer';
 
@@ -31,15 +31,13 @@ const ProductScreen = ({ match, history }) => {
   }, [dispatch, match, data]);
   /**Cretaing a constant for the addToCartHandler */
   const addToCartHandler = () => {
-    
-    alert("You need to sign-in to the MobileZone to purchase any item!");
-
-    history.push(`/userlogin`);
+    dispatch(addToCart(data._id, qty));
+    history.push(`/cart`);
   };
 
     return (
       <div>
-        <NormalNavigation/><br></br><br></br>
+        <User_Navigation/><br></br><br></br>
           <div className="container product-screen">
             <div className="productscreen">
               {loading ? (

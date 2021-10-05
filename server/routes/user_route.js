@@ -6,7 +6,7 @@ const Error = require('../utils/error_response');
 const sendEmail = require('../utils/send_email');
 const  { getPrivateData }  = require('../middleware/private_error');
 const { protect }  =  require('../middleware/user_protect');
-const moment = require('moment');
+
 //Protecion
 router.get('/user', protect,getPrivateData);
 
@@ -150,62 +150,21 @@ router.get('/user/users', (req,res,next) => {
     });
 });
 
-//Retrive past week users
-router.get('/user/newusers', (req,res,next) => {
-  
-    let today,weekago;
-
-    today = moment().format("YYYY-MM-DD");
-    weekago = moment().subtract(7,'d').format('YYYY-MM-DD');
-
-  
-    userModel.find({
-        "userDate": {
-          $gte: weekago,
-          $lte: today
-        }
-      },(err, users) => {
-
-        if(err){
-            return next(new Error('No new users!', 400));
-        }
-        return res.status(200).json({
-            success:true,
-            users
-        });
-    });
-});
-
-// Retrive specific data by email
-
+//Retrive specific data
 router.get('/user/userdata/:userEmail',(req,res) =>{
     
     let userEmail = req.params.userEmail;
     userModel.findOne({"userEmail":userEmail} ,(err, user ) => {
         if(err){
-            return next(new Error("Can not find a user with this email...!",400));
+            return next(new ErrorResponse("Can not find a user with this email...!",400));
         }
         return res.status(200).json({
             success:true,
             user
         });
-    })
-})
+    });
+});
 
-
-// Retrive specific data by id
-router.get('/user/userdatas/:id',(req,res) =>{
-    const userid = req.params.id;
-    userModel.findById(userid,(err, user) => {
-        if(err){
-            return next(new Error("Can not find a user with this id...!",400));
-        }
-        return res.status(200).json({
-            success:true,
-            user
-        });
-    })
-})
 
 //Update
 router.put('/user/updateuser/:id', (req, res, next) => {
@@ -215,7 +174,7 @@ router.put('/user/updateuser/:id', (req, res, next) => {
     },
     (err, user) => {
         if(err){
-            return next(new Error('Can not update the data!', 400));
+            return next(new userModel('Can not update the data!', 400));
         }
         
         return res.status(200).json({

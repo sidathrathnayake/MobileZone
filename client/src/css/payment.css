@@ -67,6 +67,7 @@
   border-radius: 10px;
   padding: 10px;
   padding-right: 0px;
+  margin-top: -8%;
 }
 .searchButton {
   
@@ -102,17 +103,13 @@
 }
 #userOrder{
   
-  position: relative;
-  width:100%;
-  max-height: 60vh;
-  border-collapse: collapse;
-  border-spacing: 0;
-  border-radius: 8px 8px 0 0;
-  overflow: scroll;
-  box-shadow: 0 2px 12px rgba(32, 32, 32, .3);
-  background: #fafafa;
-  text-align: center;
-  scroll-behavior: auto;
+  transform: translate(-50%,-50%);
+  width: 150%;
+  margin-top: 15%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  -webkit-box-shadow: 0px 2px 62px 8px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 2px 62px 8px rgba(0,0,0,0.25);
+    box-shadow: 0px 2px 62px 8px rgba(0,0,0,0.25);
 }
 #userOrder td{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -172,78 +169,4 @@
 #hrLine{
   height: 2px;
   margin-top: 0.2%;
-}
-#orderTable{
-  width: 100%;
-  margin-top: 5%;
-}
-
-.adminOrderSearch{
-  margin-left: 90%;
-}
-
-.orderUpdateCont{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  width: 700px;
-  height: fit-content;
-  margin-bottom: 10%;
-  background-color: #fff;
-  border-radius:15px;
-  -webkit-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
-    -moz-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
-    box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.25);
-    
-}
-
-.updateOrdRow{
-  height: 40px;
-  width: 650px;
-}
-
-.updateLabel{
-  font-size: large;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.updateInput{
-  width: 400px;
-}
-
-.dark-btn{
-  background-color: #282939;
-  color: #fff;
-  width: 250px;
-  height: 35px;
-  border-radius: 5px;
-  margin-top: -10px;
-  font-size: large;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.heading{
-  text-decoration: none;
-  margin-left: 550px;
-  margin-top: 30px;
-}
-
-.deliverySelect{
-  width: 426px;
-  margin-top: 10px;
-  margin-left: 215px;
-  margin-bottom: 150px;
-  color: #000;
-}
-
-.category-update-description {
-  width: 400px;
-}
-
-.reportSelect{
-  width: 300px;
-}
-
-.b-t{
-  padding-bottom: 10px;
 }

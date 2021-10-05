@@ -6,7 +6,7 @@ const path = require('path');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'C:/Users/msi gf63/Desktop/MobileZone/client/public/itemImages');
+        cb(null, '../client/public/itemImages');
     },
     filename: function (req, file, cb) {
         cb(null, new Date().toISOString().replace(/:/g,'-')+file.originalname);

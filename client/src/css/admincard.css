@@ -1,95 +1,64 @@
-.adminnav {
-    padding-top: 0.4%;
-    height: 60px;
-    width: 100%;
-    background-color: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.admincards{
 
-}
-
-.reportbutton .btn{
-    margin-top: 0.4%;
-    margin-left: 1%;
-    float: left;
-    margin-right: 1%;
-}
-
-.reportbutton{
-    margin-top: 1%;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-.adminnav h1 a {
-    color: #fff;
-}
-
-.adminnav h1 a:hover {
-    color: goldenrod;
-}
-
-.admincards {
-    margin-top: 10%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 20px;
+    padding:20px;
     grid-gap: 40px;
 
 }
 
-.admincard {
+.admincard{
     background-color: #222;
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0 30px rgba(0, 0 ,0,0.18);
 
 }
 
+.admincard:hover{
+    background-color: #fff;
 
-.admincard-details {
-    padding: 20px 10px;
 }
 
-.admincard-details>h3 {
+.admincard-details{
+    padding:20px 10px;
+}
+
+.admincard-details>h3{
     color: #fff;
     font-weight: 600;
     font-size: 18px;
-    margin: 10px 0 15px 0;
+    margin: 10px 0 15px 0;  
 }
 
-.admincard:hover .admincard-details>h3 {
-    color: goldenrod;
+.admincard:hover .admincard-details>h3{
+    color: #000;
 }
 
 
-.admincard-details>p {
-    color: #a0a0a0;
+.admincard-details>p{
+    color:#a0a0a0;
     font-weight: 400;
     font-size: 15px;
-    line-height: 30px;
+    line-height: 30px; 
 }
 
-.admincard:hover .admincard-details>p {
-    color: #fff;
+.admincard:hover .admincard-details>p{
+    color: #555;
 }
 
-.admincard-image {
+.admincard-image{
     width: 100%;
     display: block;
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px 20px 0 0 ;
 
 }
 
-.admincard-container {
+.admincard-container{
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100% );
 }
 
-.admincard-container:after {
+.admincard-container:after{
     content: "";
     height: 100%;
     width: 100%;

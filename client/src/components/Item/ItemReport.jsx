@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/scope */
-/* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
 import Sidebar from "../Navigation/Sidebar";
 import "../../css/item-report.css";
@@ -9,7 +7,7 @@ import i_title from "./i_title.jpg";
 import i_logo from "./i_logo.png";
 import "jspdf-autotable";
 
-export default class ItemReport extends Component {
+export default class componentName extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,8 +22,7 @@ export default class ItemReport extends Component {
   }
 
   getDetailsHandler() {
-console.log(this.state.startDate)
-
+    console.log(this.state.startDate);
     if (this.state.startDate === "" || this.state.endDate === "") {
       this.setState({ errorCheck: "Empty fields !" });
     } else {
@@ -78,18 +75,18 @@ console.log(this.state.startDate)
 
   render() {
     return (
-      <div className="wrapper">
+      <div>
         <Sidebar />
-        <div className="adminhome-container">
-                <div className="adminnav">
-            <h1>
-              <a href="#">
-                <i className="fa fa-mobile"></i> &nbsp;&nbsp;Weekly Product Report
-              </a>
-            </h1>
-            
-          </div>
-                <div className="table-container" >
+        <div className="co" style={{ width: "100%", height: "auto" }}>
+          <h1
+            style={{
+              textAlign: "center",
+              textDecoration: "none",
+              padding: "30px 0 30px 0",
+            }}
+          >
+            Weekly Added Items
+          </h1>
           <div className="row r-middle-content">
             <div className="col-8 r-left-container">
               <div className="report-details">
@@ -125,20 +122,20 @@ console.log(this.state.startDate)
                           <table className="my-tables">
                             <tbody>
                               <tr>
-                                <td className="ttd">Item Name</td>
-                                <td className="ttd">:{item.itemName}</td>
+                                <td>Item Name</td>
+                                <td>:{item.itemName}</td>
                               </tr>
                               <tr>
-                                <td className="ttd">Item Category</td>
-                                <td className="ttd">:{item.itemCategory}</td>
+                                <td>Item Category</td>
+                                <td>:{item.itemCategory}</td>
                               </tr>
                               <tr>
-                                <td className="ttd">Item Price</td>
-                                <td className="ttd">:{item.itemPrice}</td>
+                                <td>Item Price</td>
+                                <td>:{item.itemPrice}</td>
                               </tr>
                               <tr>
-                                <td className="ttd">Item Insert Date</td>
-                                <td className="ttd">
+                                <td>Item Insert Date</td>
+                                <td>
                                   :
                                   {new Date(item.insertData)
                                     .toISOString()
@@ -176,14 +173,14 @@ console.log(this.state.startDate)
                   onChange={this.onDateHandler}
                 />
                 <button
-                  className="btn edit-btn-category"
+                  className="btn-secondary r-form-btn"
                   id="btn-get"
                   onClick={this.getDetailsHandler}
                 >
                   Get details
                 </button>
                 <button
-                  className="btn"
+                  className="btn-primary r-form-btn"
                   id="btn-save"
                   onClick={this.pdfGenerate}
                 >
@@ -228,8 +225,7 @@ console.log(this.state.startDate)
             </tbody>
           </table>
         </div>
-        </div>
-        </div>
+      </div>
     );
   }
 }

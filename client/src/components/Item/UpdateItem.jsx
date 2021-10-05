@@ -145,17 +145,9 @@ export default class UpdateItem extends Component {
     return (
       <div className="wrapper">
         <Sidebar />
-        <div className="adminhome-container">
-                <div className="adminnav">
-            <h1>
-              <a href="#">
-                <i className="fa fa-mobile"></i> &nbsp;&nbsp;Update Product
-              </a>
-            </h1>
-            
-          </div>
         <div className="table-container">
-          <br/>
+          <h1>Update Item </h1>
+          <br />
           <div>
             <div>
               <form
@@ -246,6 +238,7 @@ export default class UpdateItem extends Component {
                     onChange={(e) => this.onImageHandler(e)}
                     style={{ width: "115%" }}
                   />
+                  <br />
                 </div>
 
                 <div style={{ display: "flex", width: "64vh" }}>
@@ -271,7 +264,6 @@ export default class UpdateItem extends Component {
               </form>
             </div>
           </div>
-        </div>
         </div>
       </div>
     );

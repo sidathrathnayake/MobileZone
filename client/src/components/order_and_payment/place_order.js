@@ -38,27 +38,27 @@ class placeOrder extends Component {
                   <h2 id="ordSummaryH2">Order Summary</h2>
                   <hr id="hrLine"/>
                   <div className="row ordTotal">
-                    <div>Items Total:&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;Rs.{localStorage.getItem("order_Total")}</div>
+                    <div>Items Total:&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;${localStorage.getItem("order_Total")}</div>
                   </div>
                 
                
                   <div className="row ordTotal">
-                    <div>Shipping Charge:&emsp;&emsp;&nbsp;&nbsp;&nbsp;Rs.{localStorage.getItem("Shipping_charge")}</div>
+                    <div>Shipping Charge:&emsp;&emsp;&nbsp;&nbsp;&nbsp;${localStorage.getItem("Shipping_charge")}</div>
                     <div></div>
                   </div>
                 
                   <div className="row ordTotal">
-                    <div>Tax Charge:&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;Rs.{localStorage.getItem("tax_charge")}</div>
+                    <div>Tax Charge:&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;${localStorage.getItem("tax_charge")}</div>
                     <div></div>
                   </div>
               
                   <div className="row ordTotal">
                     <div>
-                      <strong> Order Total:&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.{localStorage.getItem("total_charge")}</strong>
+                      <strong> Order Total:&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${localStorage.getItem("total_charge")}</strong>
                     </div>
                   </div>
                 
-                  <button type="button" className="btn" style={{width: '95%'}} id="placeOrderbtn" onClick={this.confirmOrder} >
+                  <button type="button" className="btn" id="placeOrderbtn" onClick={this.confirmOrder} >
                     Place Order
                   </button>
             </div>

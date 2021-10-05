@@ -11,7 +11,7 @@ import CartItem from "../components/Cart/CartItem";
 /**Imorting the addToCart & removerFromCart methods from cartActions */
 import { addToCart, removeFromCart, resetCart } from "../redux/actions/cartActions";
 /**Importing the header */
-import UserNavigation from '../components/Navigation/User_Navigation';
+import User_Navigation from '../components/Navigation/User_Navigation';
 /**Importing the footer */
 import Footer from '../components/Footer/Footer';
 
@@ -62,7 +62,7 @@ const CartScreen = ({history}) => {
   }
     return (
       <div>
-        <UserNavigation/><br></br><br></br>
+        <User_Navigation/><br></br><br></br>
           <>
             <div className="cartscreen">
               <div className="cartscreen__left">
@@ -70,7 +70,7 @@ const CartScreen = ({history}) => {
                   <div className="container cart-screen-container">
                     {cartItems.length === 0 ? (
                       <div style={{marginLeft:"0%",color:"white"}}>
-                        Your Cart Is Empty <Link to="/view-category-customer-logged">Go Back</Link>
+                        Your Cart Is Empty <Link to="/view-category-customer">Go Back</Link>
                       </div>
                     ) : (
                     cartItems.map((item) => (

@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import axios from "axios";
-import Sidebar from '../Navigation/Sidebar';
-import '../../css/adminItemView.css';
-import TableScrollbar from 'react-table-scrollbar';
+import Sidebar from "../Navigation/Sidebar";
+import Footer from "../Footer/Footer";
+import "../../css/adminItemView.css";
 import DeleteItemModal from "./DeleteItemModal";
 
 export default class AdminItemView extends Component {
@@ -61,65 +61,83 @@ export default class AdminItemView extends Component {
   closeHandler() {
     this.setState({ showDelete: false });
   }
-  goPrint = () => {
-    this.props.history.push("/item-report");
-  };
-  
-    render() {
-        return (
-            <div className="wrapper">
-            <Sidebar/>
-            <div className="adminhome-container">
-          <div className="adminnav">
-            <h1>
-              <a href="/userdetails">
-                <i className="fa fa-mobile"></i>  &nbsp;&nbsp;Products
+
+  render() {
+    return (
+      <div className="wrapper">
+        <Sidebar />
+        <div className="table-container">
+          <h1>Products</h1>
+          <br />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              paddingLeft: "700px",
+            }}
+          >
+            <input
+              type="text"
+              className="form-control"
+              style={{ width: "300px", height: "40px", float: "left" }}
+              placeholder="Search"
+              name="keyWord"
+              value={this.state.keyWord}
+              onChange={this.onSearchHandler}
+            />
+            <div style={{ paddingLeft: "50px" }}>
+              <a
+                href="/add-item"
+                className="btn"
+                style={{ width: "150px", height: "40px" }}
+              >
+                Insert item
               </a>
-            </h1>
-            
-          </div>
-          <div className="reportbutton">
-          <div className="table-search">
-          <input type="text" className="form-control" style={{width:"300px", height:"40px",float:"left"}} placeholder="Search" name="keyWord"
-                    value={this.state.keyWord} onChange={this.onSearchHandler}/>
             </div>
-          <button className="btn" onClick={this.goPrint} id="right-panel-btn">
-              {" "}
-              Report
-            </button>
-            
           </div>
-            <div className="table-container">
-                <div >
-                    
-                    <div >
-                        <a href="/add-item" className="btn" style={{width:"150px",height:"40px"}}>Insert item</a>
-                    </div>
-                </div>
-                <TableScrollbar rows={9}>
-                <table>
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Item Name</th>
-                  <th scope="col">Item Price</th>
-                  <th scope="col">Category</th>
-                  <th scope="col">Update</th>
-                  <th scope="col">Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-              {this.state.products.length > 0 && this.state.products.map((item, index)=>(
-                  <tr key={index}>
-                    <td >{index+1}</td>
-                                <td>{item.itemName}</td>
-                                <td>Rs. {item.itemPrice}.00</td>
-                                <td>{item.itemCategory}</td>
-                   
+
+          <table
+            className="table table-hover"
+            style={{
+              borderRadius: "0",
+            }}
+          >
+            <thead
+              class="thead-dark"
+              id="table-header"
+              style={{ color: "#222" }}
+            >
+              <tr>
+                <th scope="col" class="bg-dark">
+                  ID
+                </th>
+                <th scope="col" class="bg-dark">
+                  Item Name
+                </th>
+                <th scope="col" class="bg-dark">
+                  Item Price
+                </th>
+                <th scope="col" class="bg-dark">
+                  Category
+                </th>
+                <th scope="col" class="bg-dark"></th>
+                <th scope="col" class="bg-dark"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.products.length > 0 &&
+                this.state.products.map((item, index) => (
+                  <tr key={index} scope="row">
+                    <th style={{ color: "black" }}>{index + 1}</th>
+                    <td>{item.itemName}</td>
+                    <td>Rs. {item.itemPrice}.00</td>
+                    <td>{item.itemCategory}</td>
                     <td>
                       {" "}
                       <button
-                        className="btn edit-btn-category"
+                        className="btn btn-primary"
+                        id="button-update"
                         onClick={(event) => this.btnOnClick(event, item._id)}
                       >
                         Update
@@ -127,7 +145,8 @@ export default class AdminItemView extends Component {
                     </td>
                     <td>
                       <button
-                        className="btn delete-btn-category"
+                        className="btn btndlt"
+                        id="button-delete"
                         onClick={(event) =>
                           this.showHandler(event, item._id, item.itemName)
                         }
@@ -141,15 +160,12 @@ export default class AdminItemView extends Component {
                         itemName={this.state.selectedName}
                       />
                     </td>
-
                   </tr>
                 ))}
-              </tbody>
-            </table>
-            </TableScrollbar>
-            </div>
-            </div>
-            </div>
-        );
-    }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
 }

@@ -49,9 +49,9 @@ const adminLogoutHandler = () =>{
                     <ul>
                         <li><a href="/adminhome"><i className="fa fa-home"></i>Home</a></li>
                         <li><a href="/userdetails"><i className="fa fa-users-cog"></i>Customers</a></li>
-                        <li><a href="/admin-get-item"><i className="fa fa-mobile"></i>Products</a></li>
+                        <li><a href="/admin-get-item"><i className="fa fa-mobile"></i>Items</a></li>
                         <li><a href="/view-category-admin"><i className="fa fa-clipboard-list"></i>Categories</a></li>
-                        <li><a href="/adminViewOrder"><i className="fa fa-coins"></i>Orders</a></li>
+                        <li><a href="#"><i className="fa fa-coins"></i>Orders</a></li>
                         <li><a href="#"  onClick={adminLogoutHandler} ><i className="fa fa-power-off"></i>Sign Out</a></li>
                     </ul>
 	        </div>

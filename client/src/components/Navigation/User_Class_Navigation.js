@@ -24,14 +24,14 @@ componentDidMount() {
 
 onCategoryClick(event,categoryName){
     console.log(categoryName)
-    window.location = `/user-get-item-logged/${categoryName}`
+    window.location = `/user-get-item/${categoryName}`
 
 }
 
 render() {
     return (
         <div> 
-                    <li><a href="/view-category-customer-logged">Devices<i className="fas fa-caret-down"></i></a>
+                    <li><a href="/view-category-customer">Devices<i className="fas fa-caret-down"></i></a>
                         <div className="nav-dropdown">
                             <ul>
                                 {this.state.category.map((items, index)=>(
